@@ -10,7 +10,7 @@ import {
 const HomeHero: React.FC = () => {
   return (
     <section className="w-full h-[50rem] lg:h-screen relative">
-      <div className="z-10 flex items-center absolute page-width top-0 left-0 w-full h-full">
+      <div className="z-10 flex items-center absolute page-width top-0 left-0 w-full h-full pointer-events-none">
         <Typography as="h1" variant="xxl" color="white" className="text-center">
           We use AI to{" "}
           <Typography variant="xxl" color="gradient">
@@ -54,11 +54,32 @@ const HomeHero: React.FC = () => {
           </div>
         </div>
         <div
-          className="xs:hidden sm:hidden lg:flex lg:w-1/2 lg:hover:w-3/4 transition-all g-full object-cover lg:bg-center"
+          className="xs:hidden sm:hidden lg:flex lg:w-1/2 lg:hover:w-3/4 transition-all g-full object-cover lg:bg-center flex items-end"
           style={{ backgroundImage: `url(${images.AdvertisingBackground})` }}
-        ></div>
+        >
+          <div className="page-width z-[2] py-20">
+            <Typography
+              as="h2"
+              variant="xl"
+              color="white"
+              className="text-center font-medium flex items-center justify-center gap-1"
+            >
+              Advertising Industry <ArrowDownIcon className="h-6 w-6" />
+            </Typography>
+            <Typography
+              as="p"
+              variant="md"
+              className="text-gray-300 text-center"
+            >
+              Discover all our AI-powered advertising services at Stream Engine.
+              Our cutting-edge technology leverages machine learning to analyze
+              real-time user data, ensuring your ads reach the right audience at
+              the optimal time.
+            </Typography>
+          </div>
+        </div>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1] pointer-events-none" />
     </section>
   );
 };

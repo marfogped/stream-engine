@@ -44,7 +44,7 @@ const socials = [
 const Footer: React.FC = () => {
   return (
     <footer className="mt-[80px]">
-      <div className="page-width">
+      <div className="page-width flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between">
         <div className="flex flex-col gap-[20px] items-start">
           <picture>
             <img
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[10px] mt-[80px]">
+        <div className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
           <Typography as="h2" variant="xl" color="black">
             Company
           </Typography>
@@ -115,8 +115,8 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="mt-[40px] bg-primary page-width py-2">
-        <Typography as="span" variant="md" className="black font-medium">
+      <div className="mt-[40px] bg-primary page-width py-2 flex justify-center">
+        <Typography as="span" variant="md" className="font-medium">
           2024 © Stream Engine. All rights reserved.
         </Typography>
       </div>
