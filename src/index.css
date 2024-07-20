@@ -22,3 +22,10 @@
     padding-block: 120px;
   }
 }
+
+.text-gradient {
+  background: linear-gradient(to right, #f8f603, #0091da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: max-content;
+}

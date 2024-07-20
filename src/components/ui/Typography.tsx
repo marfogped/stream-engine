@@ -1,29 +1,26 @@
 import React from "react";
 
-type VariantType = "h1" | "h2" | "h3" | "large" | "medium" | "small" | "xsmall";
-type ColorType = "white" | "black" | "lightGray" | "darkGray";
+type VariantType = "xxl" | "xl" | "lg" | "sm" | "md";
+type ColorType = "white" | "black" | "gradient";
 
 const variantClasses: Record<VariantType, string> = {
-  h1: "lg:text-6xl font-bold xs:text-2xl sm:text-2xl",
-  h2: "font-semibold xs:text-xl sm:text-xl md:text-4xl",
-  h3: "xs:text-lg sm:text-lg md:text-xl font-medium",
-  large: "xs:text-lg sm:text-lg lg:text-xl",
-  medium: "xs:text-md sm:text-md lg:text-lg",
-  small: "xs:text-sm sm:text-sm lg:text-md",
-  xsmall: "xs:text-xs sm:text-xs lg:text-sm",
+  xxl: "font-bold xs:text-[33.83px] sm:text-[33.83px] lg:text-[101.66px]",
+  xl: "font-medium xs:text-xl sm:text-xl md:text-[62.83px]",
+  lg: "xs:text-lg sm:text-lg md:text-[33.83px] font-medium",
+  md: "text-[24px]",
+  sm: "text-[14.83]",
 };
 
 const colorClasses: Record<ColorType, string> = {
   white: "text-white",
-  black: "text-[#242526]",
-  lightGray: "text-[#CACACA]",
-  darkGray: "text-[#363738]",
+  black: "text-black",
+  gradient: "text-gradient",
 };
 
 interface TypographyProps {
   as?: keyof JSX.IntrinsicElements;
   variant: VariantType;
-  color: ColorType;
+  color?: ColorType;
   className?: string;
   children?: React.ReactNode;
 }
@@ -36,7 +33,7 @@ const Typography: React.FC<TypographyProps> = ({
   ...props
 }) => {
   const variantClass = variantClasses[variant] || "";
-  const colorClass = colorClasses[color] || "";
+  const colorClass = color ? colorClasses[color] : "";
   const classes = `${variantClass} ${colorClass} ${className}`.trim();
 
   const content =
