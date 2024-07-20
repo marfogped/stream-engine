@@ -59,8 +59,8 @@ const Homepage: React.FC = () => {
       <HomeHero />
       <LogoCarousel logos={carouselLogos} />
       <HomeServices />
-      <HomeContact />
       <HomeTechnologies />
+      <HomeContact />
     </>
   );
 };

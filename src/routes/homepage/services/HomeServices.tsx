@@ -7,7 +7,7 @@ import {
   TabPanel,
   TabIndicator,
 } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { Typography } from "../../../components/ui";
 import { images } from "../../../constants";
 
@@ -23,7 +23,7 @@ const HomeServices: React.FC = () => {
           <TabIndicator
             mt="-1.5px"
             height="3px"
-            bg="yellow.300"
+            bg="#F8F603"
             borderRadius="1px"
           />
           <TabPanels>
@@ -40,7 +40,9 @@ const HomeServices: React.FC = () => {
                   </Typography>
                 </div>
 
-                <Button colorScheme="yellow">Get in Touch</Button>
+                <Button bg="#F8F603" _hover={{ bg: "#F8F603" }} type="submit">
+                  Get in Touch
+                </Button>
               </div>
 
               <div>
@@ -65,7 +67,9 @@ const HomeServices: React.FC = () => {
                   </Typography>
                 </div>
 
-                <Button colorScheme="yellow">Get in Touch</Button>
+                <Button bg="#F8F603" _hover={{ bg: "#F8F603" }} type="submit">
+                  Get in Touch
+                </Button>
               </div>
 
               <div>

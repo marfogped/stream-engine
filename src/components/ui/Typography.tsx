@@ -1,14 +1,13 @@
 import React from "react";
 
-type VariantType = "xxl" | "xl" | "lg" | "sm" | "md";
+type VariantType = "xxl" | "xl" | "lg" | "md";
 type ColorType = "white" | "black" | "gradient";
 
 const variantClasses: Record<VariantType, string> = {
   xxl: "font-bold xs:text-[33.83px] sm:text-[33.83px] lg:text-[101.66px]",
-  xl: "font-medium xs:text-xl sm:text-xl md:text-[62.83px]",
+  xl: "font-medium xs:text-[33.83px] sm:text-[33.83px] md:text-[62.83px]",
   lg: "xs:text-lg sm:text-lg md:text-[33.83px] font-medium",
-  md: "text-[24px]",
-  sm: "text-[14.83]",
+  md: "xs:text-[14.83px] sm:text-[14.83px] text-[24px]",
 };
 
 const colorClasses: Record<ColorType, string> = {

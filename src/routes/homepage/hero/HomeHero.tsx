@@ -35,15 +35,15 @@ const HomeHero: React.FC = () => {
           <div className="page-width z-[2] py-20">
             <Typography
               as="h2"
-              variant="md"
+              variant="xl"
               color="white"
-              className="text-center font-medium"
+              className="text-center font-medium flex items-center justify-center gap-1"
             >
-              Defense Community
+              Defense Community <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
-              variant="sm"
+              variant="md"
               className="text-gray-300 text-center"
             >
               Discover all our AI-powered advertising services at Stream Engine.
@@ -55,7 +55,7 @@ const HomeHero: React.FC = () => {
         </div>
         <div
           className="xs:hidden sm:hidden lg:flex lg:w-1/2 lg:hover:w-3/4 transition-all g-full object-cover lg:bg-center"
-          style={{ backgroundImage: `url(${images.AdvisoryBackground})` }}
+          style={{ backgroundImage: `url(${images.AdvertisingBackground})` }}
         ></div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-[1]" />
