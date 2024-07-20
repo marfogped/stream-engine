@@ -1,6 +1,6 @@
 import StreamEngineLogo from "../assets/img/stream-engine-logo.svg";
 import DefenseBackground from "../assets/img/defense-background.jpeg";
-import AdvisoryBackground from "../assets/img/advisory-background.png";
+import AdvertisingBackground from "../assets/img/advisory-background.png";
 import Comcast from "../assets/img/comcast.png";
 import Ea from "../assets/img/ea.png";
 import Damage from "../assets/img/damage.png";
@@ -16,7 +16,7 @@ import Uta from "../assets/img/uta.png";
 export default {
   StreamEngineLogo,
   DefenseBackground,
-  AdvisoryBackground,
+  AdvertisingBackground,
   Comcast,
   Ea,
   Damage,
