@@ -1,45 +1,7 @@
 import React from "react";
 import { Typography } from "../ui";
 import { Link } from "react-router-dom";
-import { images, icons } from "../../constants";
-
-const socials = [
-  {
-    id: "1",
-    name: "Instagram",
-    icon: icons.InstagramIcon,
-    alt: "Instagram Logo",
-    url: "",
-  },
-  {
-    id: "2",
-    name: "Facebook",
-    icon: icons.FacebookIcon,
-    alt: "Facebook Logo",
-    url: "",
-  },
-  {
-    id: "3",
-    name: "LinkedIn",
-    icon: icons.LinkedInIcon,
-    alt: "LinkedIn Logo",
-    url: "",
-  },
-  {
-    id: "4",
-    name: "WhatsApp",
-    icon: icons.WhatsAppIcon,
-    alt: "WhatsApp Logo",
-    url: "",
-  },
-  {
-    id: "5",
-    name: "X",
-    icon: icons.XIcon,
-    alt: "X Logo",
-    url: "",
-  },
-];
+import { images, constants } from "../../constants";
 
 const Footer: React.FC = () => {
   return (
@@ -58,7 +20,7 @@ const Footer: React.FC = () => {
           </picture>
 
           <div className="flex items-center gap-[5px]">
-            {socials.map((social) => (
+            {constants.socials.map((social) => (
               <a
                 aria-label={`${social.alt}`}
                 key={social.id}
@@ -87,27 +49,36 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
-          <Typography as="h2" variant="xl" color="black">
+          <Typography as="h2" variant="lg" color="black">
             Company
           </Typography>
           <ul role="list" className="flex flex-col">
             <li className="link-underline w-max">
               <Link to={"/"}>
-                <Typography variant="lg" className="text-[#4F4F4F] font-medium">
+                <Typography
+                  variant="md"
+                  className="text-[#4F4F4F] link-underline font-medium"
+                >
                   FAQ
                 </Typography>
               </Link>
             </li>
             <li className="link-underline w-max">
               <Link to={"/"}>
-                <Typography variant="lg" className="text-[#4F4F4F] font-medium">
+                <Typography
+                  variant="md"
+                  className="text-[#4F4F4F] link-underline font-medium"
+                >
                   Privacy Policy
                 </Typography>
               </Link>
             </li>
             <li className="link-underline w-max">
               <Link to={"/"}>
-                <Typography variant="lg" className="text-[#4F4F4F] font-medium">
+                <Typography
+                  variant="md"
+                  className="text-[#4F4F4F] link-underline font-medium"
+                >
                   Terms of Service
                 </Typography>
               </Link>
@@ -116,7 +87,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="mt-[40px] bg-primary page-width py-2 flex justify-center">
-        <Typography as="span" variant="md" className="font-medium">
+        <Typography as="span" variant="sm" className="font-medium">
           2024 © Stream Engine. All rights reserved.
         </Typography>
       </div>

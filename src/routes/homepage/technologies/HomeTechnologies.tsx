@@ -7,30 +7,39 @@ import {
   SpeakerWaveIcon,
 } from "@heroicons/react/24/outline";
 import { images } from "../../../constants";
+import { TechnologiesCards } from "../../../components/shared";
 
 const technologies = [
   {
     id: "1",
+    cols: 2,
+    rows: 2,
     title: "Complex Vision",
-    icon: EyeIcon,
+    icon: <EyeIcon className="text-white h-12 w-12" />,
     image: images.ChatSentimentBackground,
   },
   {
     id: "2",
+    cols: 4,
+    rows: 1,
     title: "Chat Sentiment",
-    icon: ChatBubbleBottomCenterIcon,
+    icon: <ChatBubbleBottomCenterIcon className="text-white h-12 w-12" />,
     image: images.ComplexVisionBackground,
   },
   {
     id: "3",
+    cols: 2,
+    rows: 1,
     title: "Translation Overlay",
-    icon: LanguageIcon,
+    icon: <LanguageIcon className="text-white h-12 w-12" />,
     image: images.ChatSentimentBackground,
   },
   {
     id: "4",
+    cols: 6,
+    rows: 1,
     title: "Voice Detection",
-    icon: SpeakerWaveIcon,
+    icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
     image: images.ComplexVisionBackground,
   },
 ];
@@ -47,21 +56,9 @@ const HomeTechnologies: React.FC = () => {
           levels.
         </Typography>
       </div>
-      <div className="mt-10 flex flex-col gap-5">
+      <div className="mt-10 flex flex-col lg:grid lg:grid-cols-8 lg:grid-rows-2 lg:h-[80vh] gap-2">
         {technologies.map((technology) => (
-          <article
-            key={technology.id}
-            style={{ background: `url(${technology.image})` }}
-            className="flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] rounded-[10px] p-5 relative overflow-hidden hover:scale-105 transition-all"
-          >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-[1]" />
-            <div className="z-[2]">
-              <technology.icon className="text-white h-12 w-12" />
-              <Typography variant="xl" color="white">
-                {technology.title}
-              </Typography>
-            </div>
-          </article>
+          <TechnologiesCards key={technology.id} technology={technology} />
         ))}
       </div>
     </section>

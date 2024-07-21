@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "@chakra-ui/react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../../../components/ui";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { constants } from "../../../constants";
 
 const HomeContact: React.FC = () => {
   const sendMessage = () => {
@@ -9,21 +11,63 @@ const HomeContact: React.FC = () => {
   };
 
   return (
-    <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row">
-      <div className="flex flex-col gap-2 w-full mt-[80px]">
-        <Typography variant="xl" color="black">
-          Contact Us
-        </Typography>
-        <Typography variant="md" className="text-gray-700">
-          Get in touch with us to learn more about our innovative solutions, ask
-          questions, or receive support.
-        </Typography>
+    <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px] ">
+      <div className="flex flex-col w-full mt-[80px] lg:mt-[0] justify-between">
+        <div className="flex flex-col">
+          <Typography variant="xl" color="black">
+            Contact Us
+          </Typography>
+          <Typography variant="md" className="text-gray-700">
+            Get in touch with us to learn more about our innovative solutions,
+            ask questions, or receive support.
+          </Typography>
+        </div>
+
+        <div className="lg:flex flex-col gap-[5px] hidden">
+          <Typography variant="md" className="text-gray-700">
+            <a
+              className="flex items-center gap-2 underline w-max"
+              href="mailto:info@streamengine.com"
+            >
+              info@streamengine.com{" "}
+              <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
+            </a>
+          </Typography>
+
+          <div className="flex items-center gap-[5px]">
+            {constants.socials.map((social) => (
+              <a
+                aria-label={`${social.alt}`}
+                key={social.id}
+                href={social.url}
+                target="_blank"
+                className="cursor-pointer transition-all hover:scale-125"
+              >
+                {social.name.toLowerCase() === "whatsapp" && (
+                  <social.icon className="text-gray-700" />
+                )}
+                {social.name.toLowerCase() === "linkedin" && (
+                  <social.icon className="text-gray-700" />
+                )}
+                {social.name.toLowerCase() === "instagram" && (
+                  <social.icon className="text-gray-700" />
+                )}
+                {social.name.toLowerCase() === "x" && (
+                  <social.icon className="text-gray-700" />
+                )}
+                {social.name.toLowerCase() === "facebook" && (
+                  <social.icon className="text-gray-700" />
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       <form
         action="POST"
         onSubmit={sendMessage}
-        className="flex flex-col items-center gap-6 w-full mt-[40px]"
+        className="flex flex-col items-center gap-6 w-full mt-[40px] lg:mt-[0] "
       >
         <div className="grid gap-6 sm:grid-cols-2 w-full">
           <div className="relative z-0">
