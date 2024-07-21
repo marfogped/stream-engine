@@ -30,6 +30,9 @@ const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
     <article
       style={{
         background: `url(${technology.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         gridColumn: `span ${technology.cols}`,
         gridRow: `span ${technology.rows}`,
       }}

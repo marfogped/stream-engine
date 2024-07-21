@@ -38,6 +38,25 @@ const socials = [
   },
 ];
 
+const navItems = [
+  {
+    label: "Services",
+    path: "/",
+    key: "services-opt",
+  },
+  {
+    label: "Technologies",
+    path: "/",
+    key: "technologies-opt",
+  },
+  {
+    label: "Contact",
+    path: "/",
+    key: "contact-opt",
+  },
+];
+
 export default {
   socials,
+  navItems,
 };

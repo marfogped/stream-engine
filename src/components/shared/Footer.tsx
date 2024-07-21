@@ -5,7 +5,7 @@ import { images, constants } from "../../constants";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-[80px]">
+    <footer className="mt-[80px] lg:mt-[200px]">
       <div className="page-width flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between">
         <div className="flex flex-col gap-[20px] items-start">
           <picture>

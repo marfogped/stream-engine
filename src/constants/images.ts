@@ -1,8 +1,10 @@
 import StreamEngineLogo from "../assets/img/stream-engine-logo.svg";
-import DefenseBackground from "../assets/img/defense-background.jpeg";
-import AdvertisingBackground from "../assets/img/advisory-background.png";
+import DefenseBackground from "../assets/img/defense-background.webp";
+import AdvertisingBackground from "../assets/img/advisory-background.webp";
 import ChatSentimentBackground from "../assets/img/chat-sentiment-background.webp";
 import ComplexVisionBackground from "../assets/img/complex-vision-background.webp";
+import TranslationOverlayBackground from "../assets/img/translation-overlay-background.webp";
+import VoiceDetectionBackground from "../assets/img/voice-detection-background.webp";
 
 import Comcast from "../assets/img/comcast.png";
 import Ea from "../assets/img/ea.png";
@@ -22,6 +24,8 @@ export default {
   AdvertisingBackground,
   ChatSentimentBackground,
   ComplexVisionBackground,
+  TranslationOverlayBackground,
+  VoiceDetectionBackground,
   Comcast,
   Ea,
   Damage,

@@ -2,16 +2,13 @@
   font-family: "DM Sans Variable", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color: #242526;
-  background-color: #f3f4f4;
-
+  color: #0a0a0a;
+  background-color: #f6f6f6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 p {
   text-wrap: balance;
 }

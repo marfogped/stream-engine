@@ -32,7 +32,7 @@ const technologies = [
     rows: 1,
     title: "Translation Overlay",
     icon: <LanguageIcon className="text-white h-12 w-12" />,
-    image: images.ChatSentimentBackground,
+    image: images.TranslationOverlayBackground,
   },
   {
     id: "4",
@@ -40,7 +40,7 @@ const technologies = [
     rows: 1,
     title: "Voice Detection",
     icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
-    image: images.ComplexVisionBackground,
+    image: images.VoiceDetectionBackground,
   },
 ];
 
