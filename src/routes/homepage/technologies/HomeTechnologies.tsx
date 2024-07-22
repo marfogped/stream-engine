@@ -17,6 +17,8 @@ const technologies = [
     title: "Complex Vision",
     icon: <EyeIcon className="text-white h-12 w-12" />,
     image: images.ChatSentimentBackground,
+    description:
+      "Complex Vision uses AI to analyze visual data in real-time, enhancing situational awareness and decision-making.",
   },
   {
     id: "2",
@@ -25,6 +27,8 @@ const technologies = [
     title: "Chat Sentiment",
     icon: <ChatBubbleBottomCenterIcon className="text-white h-12 w-12" />,
     image: images.ComplexVisionBackground,
+    description:
+      "Chat Sentiment uses AI to analyze text in real-time, providing insights into user emotions and sentiment.",
   },
   {
     id: "3",
@@ -33,6 +37,8 @@ const technologies = [
     title: "Translation Overlay",
     icon: <LanguageIcon className="text-white h-12 w-12" />,
     image: images.TranslationOverlayBackground,
+    description:
+      "Translation Overlay employs AI to provide real-time language translation for seamless communication.",
   },
   {
     id: "4",
@@ -41,6 +47,8 @@ const technologies = [
     title: "Voice Detection",
     icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
     image: images.VoiceDetectionBackground,
+    description:
+      "Voice Detection utilizes AI to identify and process audio signals, improving speech recognition and response.",
   },
 ];
 

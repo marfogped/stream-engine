@@ -1,64 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeHero from "./hero/HomeHero";
 import HomeServices from "./services/HomeServices";
 import HomeContact from "./contact/HomeContact";
 import HomeTechnologies from "./technologies/HomeTechnologies";
+import { CustomCursor } from "../../components/ui";
 import { LogoCarousel } from "../../components/shared";
-import { images } from "../../constants";
-
-const carouselLogos = [
-  {
-    image: images.Comcast,
-    alt: "Comcast Logo",
-  },
-  {
-    image: images.Ea,
-    alt: "Ea Logo",
-  },
-  {
-    image: images.Damage,
-    alt: "Damage Logo",
-  },
-  {
-    image: images.Endeavor,
-    alt: "Endeavor Logo",
-  },
-  {
-    image: images.Havas,
-    alt: "Havas Logo",
-  },
-  {
-    image: images.Marketcast,
-    alt: "Markecast Logo",
-  },
-  {
-    image: images.Navigate,
-    alt: "Navigate Logo",
-  },
-  {
-    image: images.Pga,
-    alt: "Pga Logo",
-  },
-  {
-    image: images.Teamenvy,
-    alt: "Teamenvy Logo",
-  },
-  {
-    image: images.Usta,
-    alt: "Usta Logo",
-  },
-  {
-    image: images.Uta,
-    alt: "Uta Logo",
-  },
-];
+import { constants } from "../../constants";
 
 const Homepage: React.FC = () => {
+  const [selectedService, setSelectedService] = useState<string>("");
+
   return (
     <>
-      <HomeHero />
-      <LogoCarousel logos={carouselLogos} />
-      <HomeServices />
+      <CustomCursor className="text-white" />
+      <HomeHero setSelectedService={setSelectedService} />
+      <LogoCarousel logos={constants.carouselLogos} />
+      <HomeServices selectedService={selectedService} />
       <HomeTechnologies />
       <HomeContact />
     </>

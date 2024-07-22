@@ -24,10 +24,19 @@
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #f8f603, #0091da);
+  background-image: -webkit-linear-gradient(125deg, #f8f603, #0091da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: max-content;
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
 }
 
 .form-input {
@@ -51,4 +60,24 @@
 .link-underline:hover {
   background-size: 100% 3px;
   background-position: 0 100%;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  pointer-events: none;
+  border-radius: 5px;
+  z-index: 99999;
+  cursor: none;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  z-index: 49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
+  transform: translate(-50%, -50%);
 }

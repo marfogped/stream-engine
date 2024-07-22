@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import {
   Tabs,
   TabList,
@@ -11,10 +12,32 @@ import { Button } from "@chakra-ui/react";
 import { Typography } from "../../../components/ui";
 import { images } from "../../../constants";
 
-const HomeServices: React.FC = () => {
+interface HomeServicesProps {
+  selectedService: string;
+}
+
+const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
+  const [tabIndex, setTabIndex] = useState(0);
+
+  useEffect(() => {
+    if (selectedService.toLowerCase() === "defense") {
+      setTabIndex(0);
+    } else if (selectedService.toLowerCase() === "advertising") {
+      setTabIndex(1);
+    } else {
+      setTabIndex(0);
+    }
+  }, [selectedService]);
+
   return (
-    <section className="px-[20px] xl:pl-[100px] h-max lg:py-5 bg-black py-[80px] ">
-      <Tabs position="relative" variant="unstyled" className="h-full">
+    <section id="services" className="pl-[20px] xl:pl-[100px] h-max bg-black">
+      <Tabs
+        position="relative"
+        variant="unstyled"
+        className="h-full"
+        index={tabIndex}
+        onChange={(index) => setTabIndex(index)}
+      >
         <TabList className="w-max">
           <Tab>
             <Typography variant="sm" className="text-gray-300">
@@ -34,7 +57,7 @@ const HomeServices: React.FC = () => {
           borderRadius="1px"
         />
         <TabPanels className="h-full">
-          <TabPanel className="flex flex-col lg:flex-row h-full !p-0">
+          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-5 leading-none">
                 <Typography as="h2" variant="xl" color="white">
@@ -50,6 +73,7 @@ const HomeServices: React.FC = () => {
               <Button
                 bg="#F8F603"
                 _hover={{ bg: "#F8F603" }}
+                size="lg"
                 className="w-full xl:w-max"
               >
                 Get in Touch
@@ -59,13 +83,13 @@ const HomeServices: React.FC = () => {
             <div className="w-full">
               <img
                 src={images.DefenseBackground}
-                alt="Advertising Industry Image"
+                alt="Defense Community Image"
                 loading="lazy"
                 className="h-[284px] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
-          <TabPanel className="flex flex-col lg:flex-row h-full !p-0">
+          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-5 leading-none">
                 <Typography as="h2" variant="xl" color="white">
@@ -81,6 +105,7 @@ const HomeServices: React.FC = () => {
               <Button
                 bg="#F8F603"
                 _hover={{ bg: "#F8F603" }}
+                size="lg"
                 className="w-full xl:w-max"
               >
                 Get in Touch

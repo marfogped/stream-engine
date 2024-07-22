@@ -1,17 +1,60 @@
-import React from "react";
-import { images } from "../../../constants";
+import React, { useRef } from "react";
 import { Typography } from "../../../components/ui";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
+import { videos } from "../../../constants";
 
-const HomeHero: React.FC = () => {
+interface HomeHeroProps {
+  setSelectedService: (arg: string) => void;
+}
+
+const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
+  const defenseVideo = useRef<HTMLVideoElement>(null);
+  const advertisingVideo = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnterDefense = () => {
+    if (defenseVideo.current) {
+      defenseVideo.current.play();
+    }
+  };
+
+  const handleMouseLeaveDefense = () => {
+    if (defenseVideo.current) {
+      defenseVideo.current.pause();
+    }
+  };
+
+  const handleMouseEnterAdvertising = () => {
+    if (advertisingVideo.current) {
+      advertisingVideo.current.play();
+    }
+  };
+
+  const handleMouseLeaveAdvertising = () => {
+    if (advertisingVideo.current) {
+      advertisingVideo.current.pause();
+    }
+  };
+
+  const handleSelectedService = (service: string) => {
+    setSelectedService(service);
+    const section = document.getElementById("services");
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    }
+  };
+
   return (
-    <section className="w-full h-[40rem] xl:h-screen relative">
+    <section className="w-full h-[40rem] xl:max-h-screen relative">
       <div className="z-10 flex items-center xl:items-start xl:translate-y-1/4 xl:w-3/4 absolute page-width top-0 left-0 w-full h-full pointer-events-none leading-none">
         <Typography
           as="h1"
           variant="xxl"
           color="white"
-          className="text-center xl:text-start"
+          className="text-center xl:text-start overflow-hidden"
         >
           We use AI to{" "}
           <Typography variant="xxl" color="gradient">
@@ -30,15 +73,22 @@ const HomeHero: React.FC = () => {
       </div>
       <div className="flex h-full w-full">
         <div
-          className="xs:w-full sm:w-full xl:w-1/2 xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group"
-          style={{
-            backgroundImage: `url(${images.DefenseBackground})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          onClick={() => handleSelectedService("defense")}
+          className="xs:w-full sm:w-full relative xl:w-1/2 cursor-pointer xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group cursor-scale"
         >
-          <div className="px-[20px] xl:pl-[200px] xl:group-hover:px-[200px] z-[2] py-20 transition-all flex flex-col items-center xl:items-start gap-2">
+          <video
+            ref={defenseVideo}
+            onMouseEnter={handleMouseEnterDefense}
+            onMouseLeave={handleMouseLeaveDefense}
+            width="960"
+            height="1080"
+            loop
+            muted
+            className="z-[1] w-full h-full object-cover absolute top-0 left-0"
+          >
+            <source src={videos.DefenseVideo} type="video/mp4" />
+          </video>
+          <div className="pointer-events-none px-[20px] xl:pl-[200px] xl:group-hover:px-[200px] z-[2] py-20 transition-all flex flex-col items-center xl:items-start gap-2">
             <Typography
               as="h2"
               variant="lg"
@@ -59,15 +109,22 @@ const HomeHero: React.FC = () => {
           </div>
         </div>
         <div
-          className="xs:hidden sm:hidden xl:flex xl:w-1/2 xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group"
-          style={{
-            backgroundImage: `url(${images.AdvertisingBackground})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          onClick={() => handleSelectedService("advertising")}
+          className="xs:hidden sm:hidden xl:flex xl:w-1/2 cursor-pointer xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
         >
-          <div className="pl-[100px] group-hover:pl-[200px] z-[2] py-20 transition-all flex flex-col items-start gap-2">
+          <video
+            ref={advertisingVideo}
+            onMouseEnter={handleMouseEnterAdvertising}
+            onMouseLeave={handleMouseLeaveAdvertising}
+            width="960"
+            height="1080"
+            loop
+            muted
+            className="z-[1] w-full h-full object-cover absolute top-0 left-0"
+          >
+            <source src={videos.AdvertisingVideo} type="video/mp4" />
+          </video>
+          <div className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-20 transition-all flex flex-col items-start gap-2">
             <Typography
               as="h2"
               variant="lg"

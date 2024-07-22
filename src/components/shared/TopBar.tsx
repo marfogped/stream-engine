@@ -42,7 +42,7 @@ const TopBar: React.FC = () => {
           src={images.StreamEngineLogo}
           alt="Stream Engine Logo"
           loading="lazy"
-          className="w-32 lg:w-40 mix-blend-difference"
+          className="w-32 mix-blend-difference"
         />
       </div>
       <nav className="xs:hidden sm:hidden md:flex gap-5">
@@ -50,7 +50,7 @@ const TopBar: React.FC = () => {
           <a href={item.path} key={item.key}>
             <Typography
               color="white"
-              variant="md"
+              variant="sm"
               className="font-normal mix-blend-difference"
             >
               {item.label}
@@ -81,7 +81,7 @@ const TopBar: React.FC = () => {
               className="link-underline"
               to={item.path}
             >
-              <Typography color="black" variant="lg" className="font-medium">
+              <Typography color="black" variant="md" className="font-medium">
                 {item.label}
               </Typography>
             </Link>

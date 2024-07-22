@@ -4,3 +4,9 @@ export interface IconsProps {
   strokeWidth?: number;
   className?: string;
 }
+
+export interface ServicesProps {
+  title: string;
+  description: string;
+  backgroundImage: string;
+}

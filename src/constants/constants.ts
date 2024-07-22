@@ -1,4 +1,5 @@
 import icons from "./icons";
+import images from "./images";
 
 const socials = [
   {
@@ -55,8 +56,71 @@ const navItems = [
     key: "contact-opt",
   },
 ];
+const carouselLogos = [
+  {
+    image: images.Comcast,
+    alt: "Comcast Logo",
+  },
+  {
+    image: images.Ea,
+    alt: "Ea Logo",
+  },
+  {
+    image: images.Damage,
+    alt: "Damage Logo",
+  },
+  {
+    image: images.Endeavor,
+    alt: "Endeavor Logo",
+  },
+  {
+    image: images.Havas,
+    alt: "Havas Logo",
+  },
+  {
+    image: images.Marketcast,
+    alt: "Markecast Logo",
+  },
+  {
+    image: images.Navigate,
+    alt: "Navigate Logo",
+  },
+  {
+    image: images.Pga,
+    alt: "Pga Logo",
+  },
+  {
+    image: images.Teamenvy,
+    alt: "Teamenvy Logo",
+  },
+  {
+    image: images.Usta,
+    alt: "Usta Logo",
+  },
+  {
+    image: images.Uta,
+    alt: "Uta Logo",
+  },
+];
+
+const services = [
+  {
+    title: "Defense Community",
+    description:
+      "We ingest large data sets to recognize behavioral patterns and threats in real time across video, audio, text and still image.",
+    backgroundImage: images.DefenseBackground,
+  },
+  {
+    title: "Advertising Industry",
+    description:
+      "The world's only accurate media valuation tool - analyzing logo recognition, voice callouts, and chat mentions in real time.",
+    backgroundImage: images.AdvertisingBackground,
+  },
+];
 
 export default {
   socials,
   navItems,
+  carouselLogos,
+  services,
 };
