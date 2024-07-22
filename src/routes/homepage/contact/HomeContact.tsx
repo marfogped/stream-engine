@@ -14,17 +14,22 @@ const HomeContact: React.FC = () => {
     <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px] ">
       <div className="flex flex-col w-full mt-[80px] lg:mt-[0] justify-between">
         <div className="flex flex-col">
-          <Typography variant="xl" color="black" className="leading-tight">
+          <Typography
+            as="h2"
+            variant="xl"
+            color="black"
+            className="leading-tight"
+          >
             Contact Us
           </Typography>
-          <Typography variant="md" className="text-gray-700">
+          <Typography as="p" variant="md" className="text-gray-700">
             Get in touch with us to learn more about our innovative solutions,
             ask questions, or receive support.
           </Typography>
         </div>
 
         <div className="lg:flex flex-col gap-[5px] hidden">
-          <Typography variant="md" className="text-gray-700">
+          <Typography as="p" variant="md" className="text-gray-700">
             <a
               className="flex items-center gap-2 underline w-max"
               href="mailto:info@streamengine.com"

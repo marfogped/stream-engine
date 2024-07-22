@@ -48,17 +48,21 @@ const HomeTechnologies: React.FC = () => {
   return (
     <section className="page-width">
       <div className="flex flex-col gap-2 mt-[80px]">
-        <Typography variant="xl" color="black">
+        <Typography as="h2" variant="xl" color="black">
           Our Technology
         </Typography>
-        <Typography variant="md" className="text-gray-700">
+        <Typography as="p" variant="md" className="text-gray-700">
           Explore our leading proprietary technology performing above industry
           levels.
         </Typography>
       </div>
       <div className="mt-10 flex flex-col lg:grid lg:grid-cols-8 lg:grid-rows-2 lg:h-[80vh] gap-2">
-        {technologies.map((technology) => (
-          <TechnologiesCards key={technology.id} technology={technology} />
+        {technologies.map((technology, technologyIdx) => (
+          <TechnologiesCards
+            key={technology.id}
+            technology={technology}
+            index={technologyIdx}
+          />
         ))}
       </div>
     </section>
