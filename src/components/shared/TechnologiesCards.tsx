@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "../ui";
+import { motion } from "framer-motion";
 
 interface TechnologyProps {
   id: string;
@@ -13,9 +14,14 @@ interface TechnologyProps {
 interface CardProps {
   technology: TechnologyProps;
   className?: string;
+  index: number;
 }
 
-const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
+const TechnologiesCards: React.FC<CardProps> = ({
+  technology,
+  className,
+  index,
+}) => {
   const formatTitle = (title: string) => {
     const words = title.split(" ");
     return (
@@ -27,7 +33,11 @@ const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
     );
   };
   return (
-    <article
+    <motion.article
+      initial={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       style={{
         background: `url(${technology.image})`,
         backgroundSize: "cover",
@@ -36,7 +46,7 @@ const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
         gridColumn: `span ${technology.cols}`,
         gridRow: `span ${technology.rows}`,
       }}
-      className={`${className} flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] lg:h-full rounded-[10px] p-5 relative overflow-hidden hover:scale-105 lg:hover:scale-[102%] transition-all`}
+      className={`${className} flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] lg:h-full rounded-[10px] p-5 relative overflow-hidden transition-all`}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-[1]" />
       <div className="z-[2] flex flex-col gap-2">
@@ -45,7 +55,7 @@ const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
           {formatTitle(technology.title)}
         </Typography>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

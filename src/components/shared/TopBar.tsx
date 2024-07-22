@@ -3,11 +3,20 @@ import { images } from "../../constants";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../ui";
 import { constants } from "../../constants";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useVelocity } from "framer-motion";
 
 const TopBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrollingBack, setIsScrollingBack] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [isInView, setIsInView] = useState(true);
+
+  const slideDistance = 80;
+  const threshold = 200;
+
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,17 +34,42 @@ const TopBar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    return scrollVelocity.onChange((latest) => {
+      if (latest > 0) {
+        setIsScrollingBack(false);
+        return;
+      }
+      if (latest < -threshold) {
+        setIsScrollingBack(true);
+        return;
+      }
+    });
+  }, [scrollVelocity]);
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => setIsAtTop(latest <= 0));
+  }, [scrollY]);
+
+  useEffect(
+    () => setIsInView(isScrollingBack || isAtTop),
+    [isScrollingBack, isAtTop]
+  );
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header
+    <motion.header
       className={`page-width py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors duration-300 ${
         scrolled
           ? "bg-white/80 backdrop-blur"
           : `${isMenuOpen ? "bg-white/80 backdrop-blur" : "bg-transparent"}`
       }`}
+      animate={{ y: isInView ? 0 : -slideDistance }}
+      transition={{ duration: 0.2, delay: 0.25, ease: "easeInOut" }}
+      style={{ height: slideDistance }}
     >
       <div>
         <img
@@ -90,7 +124,7 @@ const TopBar: React.FC = () => {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 };
 
