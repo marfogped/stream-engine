@@ -14,7 +14,7 @@ const HomeContact: React.FC = () => {
     <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px] ">
       <div className="flex flex-col w-full mt-[80px] lg:mt-[0] justify-between">
         <div className="flex flex-col">
-          <Typography variant="xl" color="black">
+          <Typography variant="xl" color="black" className="leading-tight">
             Contact Us
           </Typography>
           <Typography variant="md" className="text-gray-700">

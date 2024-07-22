@@ -1,5 +1,5 @@
 import React from "react";
-import { IconsProps } from "@/lib/types";
+import { IconsProps } from "../../lib/types";
 
 const FacebookIcon: React.FC<IconsProps> = ({
   width = 24,

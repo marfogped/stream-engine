@@ -31,8 +31,10 @@ const TopBar: React.FC = () => {
 
   return (
     <header
-      className={`page-width py-8 flex items-center justify-between fixed w-screen z-50 transition-colors duration-300 ${
-        scrolled ? "bg-white" : `${isMenuOpen ? "bg-white" : "bg-transparent"}`
+      className={`page-width py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur"
+          : `${isMenuOpen ? "bg-white/80 backdrop-blur" : "bg-transparent"}`
       }`}
     >
       <div>
@@ -40,7 +42,7 @@ const TopBar: React.FC = () => {
           src={images.StreamEngineLogo}
           alt="Stream Engine Logo"
           loading="lazy"
-          className="w-40 mix-blend-difference"
+          className="w-32 lg:w-40 mix-blend-difference"
         />
       </div>
       <div className="xs:flex sm:flex md:hidden">
@@ -76,11 +78,11 @@ const TopBar: React.FC = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeIn" }}
-            className="absolute overflow-hidden top-[117px] left-0 w-full bg-white p-5 flex flex-col items-start gap-2 md:hidden"
+            className="absolute overflow-hidden top-20 left-0 w-full bg-white/80 backdrop-blur p-5 flex flex-col items-start md:hidden"
           >
             {constants.navItems.map((item) => (
-              <a href={item.path} key={item.key}>
-                <Typography color="black" variant="md" className="font-medium">
+              <a className="link-underline" href={item.path} key={item.key}>
+                <Typography color="black" variant="lg" className="font-medium">
                   {item.label}
                 </Typography>
               </a>

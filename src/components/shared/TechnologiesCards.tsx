@@ -41,7 +41,7 @@ const TechnologiesCards: React.FC<CardProps> = ({ technology, className }) => {
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-[1]" />
       <div className="z-[2] flex flex-col gap-2">
         {technology.icon}
-        <Typography variant="lg" color="white">
+        <Typography variant="lg" color="white" className="leading-tight">
           {formatTitle(technology.title)}
         </Typography>
       </div>

@@ -16,8 +16,16 @@ const HomeServices: React.FC = () => {
     <section className="px-[20px] xl:pl-[100px] h-max py-5 bg-black">
       <Tabs position="relative" variant="unstyled" className="h-full">
         <TabList className="w-max">
-          <Tab className="text-gray-300">Defense Community</Tab>
-          <Tab className="text-gray-300">Advertising Industry</Tab>
+          <Tab>
+            <Typography variant="sm" className="text-gray-300">
+              Defense Community
+            </Typography>
+          </Tab>
+          <Tab>
+            <Typography variant="sm" className="text-gray-300">
+              Advertising Industry
+            </Typography>
+          </Tab>
         </TabList>
         <TabIndicator
           mt="-1.5px"
@@ -53,7 +61,7 @@ const HomeServices: React.FC = () => {
                 src={images.DefenseBackground}
                 alt="Advertising Industry Image"
                 loading="lazy"
-                className="h-[80vh] w-full object-cover"
+                className="h-[50vh] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
@@ -84,7 +92,7 @@ const HomeServices: React.FC = () => {
                 src={images.AdvertisingBackground}
                 alt="Advertising Industry Image"
                 loading="lazy"
-                className="h-[80vh] w-full object-cover"
+                className="h-[50vh] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
