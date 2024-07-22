@@ -2,7 +2,6 @@ import React from "react";
 import { images } from "../../../constants";
 import { Typography } from "../../../components/ui";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
 
 const HomeHero: React.FC = () => {
   return (

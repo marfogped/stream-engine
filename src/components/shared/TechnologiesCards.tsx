@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography } from "../ui";
-import { motion } from "framer-motion";
 
 interface TechnologyProps {
   id: string;
@@ -33,11 +32,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
     );
   };
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 10 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+    <article
       style={{
         background: `url(${technology.image})`,
         backgroundSize: "cover",
@@ -55,7 +50,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
           {formatTitle(technology.title)}
         </Typography>
       </div>
-    </motion.article>
+    </article>
   );
 };
 

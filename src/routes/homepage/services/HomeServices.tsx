@@ -13,7 +13,7 @@ import { images } from "../../../constants";
 
 const HomeServices: React.FC = () => {
   return (
-    <section className="px-[20px] xl:pl-[100px] h-max py-5 bg-black">
+    <section className="px-[20px] xl:pl-[100px] h-max lg:py-5 bg-black py-[80px] ">
       <Tabs position="relative" variant="unstyled" className="h-full">
         <TabList className="w-max">
           <Tab>
@@ -61,7 +61,7 @@ const HomeServices: React.FC = () => {
                 src={images.DefenseBackground}
                 alt="Advertising Industry Image"
                 loading="lazy"
-                className="h-[50vh] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
+                className="h-[284px] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
@@ -91,7 +91,7 @@ const HomeServices: React.FC = () => {
               <img
                 src={images.AdvertisingBackground}
                 alt="Advertising Industry Image"
-                className="h-[50vh] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
+                className="h-[284px] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
                 loading="lazy"
               />
             </div>
