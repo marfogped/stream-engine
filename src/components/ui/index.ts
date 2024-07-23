@@ -1,5 +1,5 @@
 import Typography from "./Typography";
-import TextAnimation from "./TextAnimation";
+import ContainerAnimation from "./ContainerAnimation";
 import CustomCursor from "./CustomCursor";
 
-export { Typography, TextAnimation, CustomCursor };
+export { Typography, ContainerAnimation, CustomCursor };
