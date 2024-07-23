@@ -9,11 +9,11 @@ interface LogoCarouselProps {
 
 const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos }) => {
   return (
-    <div className="py-8 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+    <div className="py-6 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
       <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-28 [&_img]:max-h-14 animate-infinite-scroll">
         {logos.map((logo, index) => (
           <li key={index}>
-            <img src={logo.image} alt={logo.alt} />
+            <img className="grayscale" src={logo.image} alt={logo.alt} />
           </li>
         ))}
       </ul>
@@ -23,7 +23,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos }) => {
       >
         {logos.map((logo, index) => (
           <li key={index}>
-            <img src={logo.image} alt={logo.alt} />
+            <img className="grayscale" src={logo.image} alt={logo.alt} />
           </li>
         ))}
       </ul>
