@@ -145,9 +145,9 @@ const HomeContact: React.FC = () => {
           </form>
         </ContainerAnimation>
       </section>
-      <section className="page-width lg:mt-[40px]">
+      <section className="page-width mt-[20px] lg:mt-[40px]">
         <span className="sr-only">Stream Engine Map Location</span>
-        <ContainerAnimation className="h-max w-full">
+        <ContainerAnimation className="h-max w-full rounded-xl overflow-hidden shadow-lg">
           <MapComponent
             position={[34.0522, -118.2437]}
             className="xl:h-[400px] h-[200px] w-full"

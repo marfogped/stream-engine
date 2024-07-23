@@ -56,7 +56,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
           borderRadius="1px"
         />
         <TabPanels className="h-full">
-          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5">
+          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-5 leading-none">
                 <Typography as="h2" variant="xl" color="white">
@@ -113,11 +113,11 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                 src={images.DefenseBackground}
                 alt="Defense Community Image"
                 loading="lazy"
-                className="h-[284px] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
+                className="h-[350px] lg:h-[40vh] xl:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
-          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5">
+          <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-5 leading-none">
                 <Typography as="h2" variant="xl" color="white">
@@ -144,7 +144,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
               <img
                 src={images.AdvertisingBackground}
                 alt="Advertising Industry Image"
-                className="h-[284px] lg:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
+                className="h-[350px] lg:h-[40vh] xl:h-[80vh] object-cover top-0 rounded-[10px] lg:rounded-none w-full"
                 loading="lazy"
               />
             </div>

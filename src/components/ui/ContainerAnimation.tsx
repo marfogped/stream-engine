@@ -32,7 +32,7 @@ const ContainerAnimation: React.FC<ContainerAnimationProps> = ({
           ease: "power4.out",
           scrollTrigger: {
             trigger: targetRef.current,
-            start: "top 75%",
+            start: "top 85%",
             end: "bottom center",
             once: true,
           },
