@@ -24,10 +24,14 @@
 }
 
 .text-gradient {
-  background-image: -webkit-linear-gradient(125deg, #f8f603, #0091da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
+  background-image: -webkit-linear-gradient(
+    125deg,
+    #f8f603,
+    #0091da
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-animation: hue 10s infinite linear !important;
 }
 
 @keyframes hue {
@@ -66,8 +70,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 0px;
+  width: 0px;
+  opacity: 0;
   pointer-events: none;
   border-radius: 5px;
   z-index: 99999;
@@ -80,4 +85,9 @@
   justify-content: center;
   background-color: #f6f6f6;
   transform: translate(-50%, -50%);
+}
+
+.list-item::marker {
+  content: "🟡 ";
+  font-size: 0.5rem;
 }
