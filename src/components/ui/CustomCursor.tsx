@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 
-interface CustomCursorProps {
-  className?: string;
-}
+const CustomCursor: React.FC = () => {
+  const [isHoveringHero, setIsHoveringHero] = useState(false);
 
-const CustomCursor: React.FC<CustomCursorProps> = ({ className = "" }) => {
   useEffect(() => {
     const cursor = document.getElementById("custom-cursor");
-    const videos = document.querySelectorAll("video");
+    const technologyVideos = document.querySelectorAll(".technology-video");
+    const heroVideos = document.querySelectorAll(".hero-video");
 
     const onMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
@@ -21,7 +20,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ className = "" }) => {
       }
     };
 
-    const onMouseEnterVideo = () => {
+    const onMouseEnterTechnologyVideo = () => {
       if (cursor) {
         gsap.to(cursor, {
           height: 60,
@@ -31,7 +30,29 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ className = "" }) => {
       }
     };
 
-    const onMouseLeaveVideo = () => {
+    const onMouseLeaveTechnologyVideo = () => {
+      if (cursor) {
+        gsap.to(cursor, {
+          height: 0,
+          width: 0,
+          opacity: 0,
+        });
+      }
+    };
+
+    const onMouseEnterHeroVideo = () => {
+      setIsHoveringHero(true);
+      if (cursor) {
+        gsap.to(cursor, {
+          height: 60,
+          width: 60,
+          opacity: 1,
+        });
+      }
+    };
+
+    const onMouseLeaveHeroVideo = () => {
+      setIsHoveringHero(false);
       if (cursor) {
         gsap.to(cursor, {
           height: 0,
@@ -43,23 +64,32 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ className = "" }) => {
 
     document.addEventListener("mousemove", onMouseMove);
 
-    videos.forEach((video) => {
-      video.addEventListener("mouseenter", onMouseEnterVideo);
-      video.addEventListener("mouseleave", onMouseLeaveVideo);
+    technologyVideos.forEach((video) => {
+      video.addEventListener("mouseenter", onMouseEnterTechnologyVideo);
+      video.addEventListener("mouseleave", onMouseLeaveTechnologyVideo);
+    });
+
+    heroVideos.forEach((video) => {
+      video.addEventListener("mouseenter", onMouseEnterHeroVideo);
+      video.addEventListener("mouseleave", onMouseLeaveHeroVideo);
     });
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
-      videos.forEach((video) => {
-        video.removeEventListener("mouseenter", onMouseEnterVideo);
-        video.removeEventListener("mouseleave", onMouseLeaveVideo);
+      technologyVideos.forEach((video) => {
+        video.removeEventListener("mouseenter", onMouseEnterTechnologyVideo);
+        video.removeEventListener("mouseleave", onMouseLeaveTechnologyVideo);
+      });
+      heroVideos.forEach((video) => {
+        video.removeEventListener("mouseenter", onMouseEnterHeroVideo);
+        video.removeEventListener("mouseleave", onMouseLeaveHeroVideo);
       });
     };
   }, []);
 
   return (
-    <div id="custom-cursor" className={`${className} custom-cursor`}>
-      <ArrowDownIcon className="h-6 w-6 text-black" />
+    <div id="custom-cursor" className={`custom-cursor`}>
+      {isHoveringHero ? <ArrowDownIcon className="h-6 w-6 text-black" /> : ""}
     </div>
   );
 };

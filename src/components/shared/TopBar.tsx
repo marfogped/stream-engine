@@ -1,17 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { images } from "../../constants";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../ui";
 import { constants } from "../../constants";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
 
 const TopBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current) {
+        // Scroll down
+        gsap.to(headerRef.current, {
+          y: "-100%",
+          duration: 0.5,
+          ease: "power4.out",
+        });
+      } else {
+        // Scroll up
+        gsap.to(headerRef.current, {
+          y: "0%",
+          duration: 0.5,
+          ease: "power4.out",
+        });
+      }
+
+      lastScrollY.current = currentScrollY;
+
+      if (currentScrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -31,6 +54,7 @@ const TopBar: React.FC = () => {
 
   return (
     <header
+      ref={headerRef}
       className={`page-width py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors ${
         scrolled
           ? "bg-white/80 backdrop-blur"

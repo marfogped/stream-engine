@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "../ui";
 import { Link } from "react-router-dom";
 import { images, constants } from "../../constants";
+import { ContainerAnimation } from "../ui";
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
           <picture>
             <img
               src={images.StreamEngineLogo}
-              alt="AulaGIS Logo"
+              alt="Stream Engine Logo"
               height={100}
               width={250}
               loading="lazy"
@@ -48,7 +49,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
+        <ContainerAnimation className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
           <Typography as="h2" variant="lg" color="black">
             Company
           </Typography>
@@ -84,7 +85,7 @@ const Footer: React.FC = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </ContainerAnimation>
       </div>
       <div className="mt-[40px] bg-primary page-width py-2 flex justify-center">
         <Typography as="span" variant="sm" className="font-medium">

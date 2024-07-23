@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Typography } from "../../../components/ui";
+import { ContainerAnimation, Typography } from "../../../components/ui";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { videos } from "../../../constants";
 
@@ -74,7 +74,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
       <div className="flex h-full w-full">
         <div
           onClick={() => handleSelectedService("defense")}
-          className="xs:w-full sm:w-full relative xl:w-1/2 cursor-pointer xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group cursor-scale"
+          className="xs:w-full sm:w-full relative xl:w-1/2 cursor-none xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group cursor-scale"
         >
           <video
             ref={defenseVideo}
@@ -84,11 +84,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             height="1080"
             loop
             muted
-            className="z-[1] w-full h-full object-cover absolute top-0 left-0"
+            className="z-[1] w-full h-full object-cover absolute hero-video top-0 left-0"
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <div className="pointer-events-none px-[20px] z-[2] py-16 transition-all flex flex-col items-center lg:items-start gap-2 origin-top">
+          <ContainerAnimation className="pointer-events-none px-[20px] z-[2] py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
@@ -106,11 +106,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
               process vast amounts of data, identifying potential threats and
               behavioral patterns in real time.
             </Typography>
-          </div>
+          </ContainerAnimation>
         </div>
         <div
           onClick={() => handleSelectedService("advertising")}
-          className="xs:hidden sm:hidden xl:flex xl:w-1/2 cursor-pointer xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
+          className="xs:hidden sm:hidden xl:flex xl:w-1/2 cursor-none xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
         >
           <video
             ref={advertisingVideo}
@@ -120,11 +120,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             height="1080"
             loop
             muted
-            className="z-[1] w-full h-full object-cover absolute top-0 left-0"
+            className="z-[1] w-full h-full object-cover absolute hero-video top-0 left-0"
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <div className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-16 transition-all flex flex-col items-start gap-2 origin-top">
+          <ContainerAnimation className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-16 transition-all flex flex-col items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
@@ -142,7 +142,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
               real-time user data, ensuring your ads reach the right audience at
               the optimal time.
             </Typography>
-          </div>
+          </ContainerAnimation>
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1] pointer-events-none" />

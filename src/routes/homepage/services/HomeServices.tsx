@@ -11,7 +11,6 @@ import {
 import { Button } from "@chakra-ui/react";
 import { Typography } from "../../../components/ui";
 import { images } from "../../../constants";
-
 interface HomeServicesProps {
   selectedService: string;
 }
@@ -68,6 +67,35 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                   threats in real time across video, audio, text and still
                   image.
                 </Typography>
+                <div className="flex flex-col gap-5">
+                  <Typography as="p" variant="md" className="text-gray-300">
+                    Using AI for automated data ingestion to recognize threats
+                    in real time:
+                  </Typography>
+
+                  <ul role="list" className="flex flex-col gap-2">
+                    <li className="list-item">
+                      <Typography as="p" variant="md" className="text-gray-300">
+                        Real-time threat detection
+                      </Typography>
+                    </li>
+                    <li className="list-item">
+                      <Typography as="p" variant="md" className="text-gray-300">
+                        Comprehensive data analysis
+                      </Typography>
+                    </li>
+                    <li className="list-item">
+                      <Typography as="p" variant="md" className="text-gray-300">
+                        Scalability
+                      </Typography>
+                    </li>
+                    <li className="list-item">
+                      <Typography as="p" variant="md" className="text-gray-300">
+                        Actionable insights
+                      </Typography>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               <Button

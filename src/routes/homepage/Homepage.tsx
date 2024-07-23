@@ -12,7 +12,7 @@ const Homepage: React.FC = () => {
 
   return (
     <>
-      <CustomCursor className="text-white" />
+      <CustomCursor />
       <HomeHero setSelectedService={setSelectedService} />
       <LogoCarousel logos={constants.carouselLogos} />
       <HomeServices selectedService={selectedService} />

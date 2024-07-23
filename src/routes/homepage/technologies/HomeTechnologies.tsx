@@ -8,17 +8,18 @@ import {
 } from "@heroicons/react/24/outline";
 import { videos } from "../../../constants";
 import { TechnologiesCards } from "../../../components/shared";
+import { ContainerAnimation } from "../../../components/ui";
 
 const technologies = [
   {
-    id: "1",
+    id: "4",
     cols: 2,
     rows: 2,
-    title: "Complex Vision",
-    icon: <EyeIcon className="text-white h-12 w-12" />,
-    video: videos.VisionTechBackground,
+    title: "Voice Detection",
+    icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
+    video: videos.VoiceTechBackground,
     description:
-      "Complex Vision uses AI to analyze visual data in real-time, enhancing situational awareness and decision-making.",
+      "Voice Detection utilizes AI to identify and process audio signals, improving speech recognition and response.",
   },
   {
     id: "2",
@@ -41,35 +42,36 @@ const technologies = [
       "Translation Overlay employs AI to provide real-time language translation for seamless communication.",
   },
   {
-    id: "4",
+    id: "1",
     cols: 6,
     rows: 1,
-    title: "Voice Detection",
-    icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
-    video: videos.VoiceTechBackground,
+    title: "Complex Vision",
+    icon: <EyeIcon className="text-white h-12 w-12" />,
+    video: videos.VisionTechBackground,
     description:
-      "Voice Detection utilizes AI to identify and process audio signals, improving speech recognition and response.",
+      "Complex Vision uses AI to analyze visual data in real-time, enhancing situational awareness and decision-making.",
   },
 ];
 
 const HomeTechnologies: React.FC = () => {
   return (
     <section className="page-width">
-      <div className="flex flex-col gap-2 mt-[80px]">
+      <ContainerAnimation className="flex flex-col gap-2 mt-[80px]">
         <Typography as="h2" variant="xl" color="black">
           Our Technology
         </Typography>
+
         <Typography as="p" variant="md" className="text-gray-700">
           Explore our leading proprietary technology performing above industry
           levels.
         </Typography>
-      </div>
-      <div className="mt-10 flex flex-col lg:grid lg:grid-cols-8 lg:grid-rows-2 lg:h-[80vh] gap-2">
+      </ContainerAnimation>
+      <div className="mt-10 flex flex-col lg:grid lg:grid-cols-8 lg:grid-rows-2 lg:h-[70vh] lg:max-h-[800px] gap-2">
         {technologies.map((technology, technologyIdx) => (
           <TechnologiesCards
+            index={technologyIdx}
             key={technology.id}
             technology={technology}
-            index={technologyIdx}
           />
         ))}
       </div>

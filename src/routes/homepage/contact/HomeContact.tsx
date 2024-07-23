@@ -4,6 +4,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../../../components/ui";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { constants } from "../../../constants";
+import { ContainerAnimation } from "../../../components/ui";
 
 const HomeContact: React.FC = () => {
   const sendMessage = () => {
@@ -13,7 +14,7 @@ const HomeContact: React.FC = () => {
   return (
     <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px] ">
       <div className="flex flex-col w-full mt-[80px] lg:mt-[0] justify-between">
-        <div className="flex flex-col">
+        <ContainerAnimation className="flex flex-col">
           <Typography
             as="h2"
             variant="xl"
@@ -26,9 +27,9 @@ const HomeContact: React.FC = () => {
             Get in touch with us to learn more about our innovative solutions,
             ask questions, or receive support.
           </Typography>
-        </div>
+        </ContainerAnimation>
 
-        <div className="lg:flex flex-col gap-[5px] hidden">
+        <ContainerAnimation className="lg:flex flex-col gap-[5px] hidden">
           <Typography as="p" variant="md" className="text-gray-700">
             <a
               className="flex items-center gap-2 underline w-max"
@@ -66,79 +67,81 @@ const HomeContact: React.FC = () => {
               </a>
             ))}
           </div>
-        </div>
+        </ContainerAnimation>
       </div>
 
-      <form
-        action="POST"
-        onSubmit={sendMessage}
-        className="flex flex-col items-center gap-6 w-full mt-[40px] lg:mt-[0] "
-      >
-        <div className="grid gap-6 sm:grid-cols-2 w-full">
-          <div className="relative z-0">
-            <input
-              type="text"
-              name="firstName"
-              className="peer form-input"
-              placeholder=" "
-              aria-label="First Name"
-            />
-            <label className="form-label">First name</label>
-          </div>
+      <ContainerAnimation className="w-full h-full">
+        <form
+          action="POST"
+          onSubmit={sendMessage}
+          className="flex flex-col items-center gap-6 w-full mt-[40px] lg:mt-[0] "
+        >
+          <div className="grid gap-6 sm:grid-cols-2 w-full">
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="firstName"
+                className="peer form-input"
+                placeholder=" "
+                aria-label="First Name"
+              />
+              <label className="form-label">First name</label>
+            </div>
 
-          <div className="relative z-0">
-            <input
-              type="text"
-              name="lastName"
-              className="peer form-input"
-              placeholder=" "
-              aria-label="Last Name"
-            />
-            <label className="form-label">Last name</label>
-          </div>
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="lastName"
+                className="peer form-input"
+                placeholder=" "
+                aria-label="Last Name"
+              />
+              <label className="form-label">Last name</label>
+            </div>
 
-          <div className="relative z-0">
-            <input
-              type="text"
-              name="email"
-              className="peer form-input"
-              placeholder=" "
-              aria-label="Email"
-            />
-            <label className="form-label">Email</label>
-          </div>
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="email"
+                className="peer form-input"
+                placeholder=" "
+                aria-label="Email"
+              />
+              <label className="form-label">Email</label>
+            </div>
 
-          <div className="relative z-0">
-            <input
-              type="text"
-              name="phone"
-              className="peer form-input"
-              placeholder=" "
-              aria-label="Phone"
-            />
-            <label className="form-label">Phone</label>
-          </div>
+            <div className="relative z-0">
+              <input
+                type="text"
+                name="phone"
+                className="peer form-input"
+                placeholder=" "
+                aria-label="Phone"
+              />
+              <label className="form-label">Phone</label>
+            </div>
 
-          <div className="relative z-0 col-span-2">
-            <textarea
-              name="message"
-              className="peer resize-none h-32 form-input"
-              placeholder=" "
-              aria-label="Your Message"
-            ></textarea>
-            <label className="form-label">Your message</label>
-          </div>
+            <div className="relative z-0 col-span-2">
+              <textarea
+                name="message"
+                className="peer resize-none h-32 form-input"
+                placeholder=" "
+                aria-label="Your Message"
+              ></textarea>
+              <label className="form-label">Your message</label>
+            </div>
 
-          <Button
-            className="mt-5 col-span-2 flex items-center gap-2"
-            bg="#F8F603"
-            _hover={{ bg: "#F8F603" }}
-            type="submit"
-          >
-            Send Message <PaperAirplaneIcon className="h-7 w-7" />
-          </Button>
-        </div>
-      </form>
+            <Button
+              className="mt-5 col-span-2 flex items-center gap-2"
+              bg="#F8F603"
+              _hover={{ bg: "#F8F603" }}
+              type="submit"
+            >
+              Send Message <PaperAirplaneIcon className="h-7 w-7" />
+            </Button>
+          </div>
+        </form>
+      </ContainerAnimation>
     </section>
   );
 };
