@@ -49,7 +49,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
 
   return (
     <section className="w-full h-[40rem] xl:max-h-screen relative">
-      <div className="z-10 flex items-center xl:items-start xl:translate-y-1/4 xl:w-3/4 absolute page-width top-0 left-0 w-full h-full pointer-events-none leading-none">
+      <div className="z-10 flex items-center justify-center xl:items-start xl:justify-start xl:translate-y-1/4 xl:w-3/4 absolute page-width top-0 left-0 w-full h-full pointer-events-none leading-none">
         <Typography
           as="h1"
           variant="xxl"
@@ -88,18 +88,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <div className="pointer-events-none px-[20px] xl:pl-[200px] xl:group-hover:px-[200px] z-[2] py-20 transition-all flex flex-col items-center xl:items-start gap-2">
+          <div className="pointer-events-none px-[20px] z-[2] py-16 transition-all flex flex-col items-center lg:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 text-white xl:text-gray-400 xl:group-hover:text-white"
+              className="text-center xl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
             >
               Defense Community <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 text-center xl:text-start xl:group-hover:opacity-100 xl:opacity-0"
+              className="text-gray-300 xl:group-hover:pl-[200px] text-center xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
             >
               Enhance your defense operations with Stream Engine's AI-driven
               solutions. Our advanced technology utilizes machine learning to
@@ -124,18 +124,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <div className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-20 transition-all flex flex-col items-start gap-2">
+          <div className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-16 transition-all flex flex-col items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 text-gray-400 group-hover:text-white"
+              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-gray-400 group-hover:text-white"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 text-center xl:text-start group-hover:opacity-100 opacity-0"
+              className="text-gray-300 text-center xl:text-start group-hover:opacity-100 opacity-0 transition-all"
             >
               Discover all our AI-powered advertising services at Stream Engine.
               Our cutting-edge technology leverages machine learning to analyze
