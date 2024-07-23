@@ -6,7 +6,7 @@ import {
   LanguageIcon,
   SpeakerWaveIcon,
 } from "@heroicons/react/24/outline";
-import { images } from "../../../constants";
+import { videos } from "../../../constants";
 import { TechnologiesCards } from "../../../components/shared";
 
 const technologies = [
@@ -16,7 +16,7 @@ const technologies = [
     rows: 2,
     title: "Complex Vision",
     icon: <EyeIcon className="text-white h-12 w-12" />,
-    image: images.ChatSentimentBackground,
+    video: videos.VisionTechBackground,
     description:
       "Complex Vision uses AI to analyze visual data in real-time, enhancing situational awareness and decision-making.",
   },
@@ -26,7 +26,7 @@ const technologies = [
     rows: 1,
     title: "Chat Sentiment",
     icon: <ChatBubbleBottomCenterIcon className="text-white h-12 w-12" />,
-    image: images.ComplexVisionBackground,
+    video: videos.SocialTechBackground,
     description:
       "Chat Sentiment uses AI to analyze text in real-time, providing insights into user emotions and sentiment.",
   },
@@ -36,7 +36,7 @@ const technologies = [
     rows: 1,
     title: "Translation Overlay",
     icon: <LanguageIcon className="text-white h-12 w-12" />,
-    image: images.TranslationOverlayBackground,
+    video: videos.TranslationsTechBackground,
     description:
       "Translation Overlay employs AI to provide real-time language translation for seamless communication.",
   },
@@ -46,7 +46,7 @@ const technologies = [
     rows: 1,
     title: "Voice Detection",
     icon: <SpeakerWaveIcon className="text-white h-12 w-12" />,
-    image: images.VoiceDetectionBackground,
+    video: videos.VoiceTechBackground,
     description:
       "Voice Detection utilizes AI to identify and process audio signals, improving speech recognition and response.",
   },
