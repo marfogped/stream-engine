@@ -29,7 +29,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
   }, [selectedService]);
 
   return (
-    <section id="services" className="pl-[20px] xl:pl-[100px] h-max bg-black">
+    <section id="services" className="h-max w-full bg-black overflow-x-hidden">
       <Tabs
         position="relative"
         variant="unstyled"
@@ -39,13 +39,13 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
       >
         <TabList className="w-max">
           <Tab>
-            <Typography variant="sm" className="text-gray-300">
-              Defense Community
+            <Typography as="h2" variant="md" color="white">
+              DEFENSE COMMUNITY
             </Typography>
           </Tab>
           <Tab>
-            <Typography variant="sm" className="text-gray-300">
-              Advertising Industry
+            <Typography as="h2" variant="md" color="white">
+              ADVERTISING INDUSTRY
             </Typography>
           </Tab>
         </TabList>
@@ -55,12 +55,13 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
           bg="#F8F603"
           borderRadius="1px"
         />
-        <TabPanels className="h-full">
+        <TabPanels className="h-full pl-[20px] xl:pl-[100px] ">
           <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-8 leading-none">
-                <Typography as="h2" variant="xl" color="white">
-                  Defense Community
+                <Typography as="h2" variant="lg" className="text-gray-300">
+                  Real-Time AI-Driven Threat Detection and Comprehensive Data
+                  Analysis
                 </Typography>
                 <div className="flex flex-col gap-5">
                   <Typography as="p" variant="md" className="text-gray-300">
@@ -120,8 +121,9 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
           <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
               <div className="flex flex-col gap-8 leading-none">
-                <Typography as="h2" variant="xl" color="white">
-                  Advertising Industry
+                <Typography as="h2" variant="lg" className="text-gray-300">
+                  Unmatched Real-Time Media Valuation with Accurate Logo, Voice,
+                  and Chat Analysis
                 </Typography>
                 <div className="flex flex-col gap-5">
                   <Typography as="p" variant="md" className="text-gray-300">
