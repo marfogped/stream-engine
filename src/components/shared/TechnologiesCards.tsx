@@ -62,6 +62,8 @@ const TechnologiesCards: React.FC<CardProps> = ({
     setIsVideoLoaded(true);
   };
 
+  const isMobileResolution = windowWidth < 992;
+
   return (
     <article
       ref={cardRef}
@@ -77,8 +79,8 @@ const TechnologiesCards: React.FC<CardProps> = ({
         onMouseLeave={handleMouseLeave}
         loop
         muted
-        autoPlay
-        playsInline
+        autoPlay={isMobileResolution}
+        playsInline={isMobileResolution}
         onCanPlay={handleVideoLoaded}
         className={`z-[1] w-full h-full technology-video scale-[135%] object-cover ${
           technology.id === "1" && "lg:scale-100"
