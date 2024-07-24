@@ -20,3 +20,9 @@ export interface TechnologyProps {
   rows: number;
   description: string;
 }
+
+export interface BenefitsProps {
+  id: string;
+  title: string;
+  image: string;
+}
