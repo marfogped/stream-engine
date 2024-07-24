@@ -4,6 +4,7 @@ import TopBar from "./TopBar";
 import LogoCarousel from "./LogoCarousel";
 import TechnologiesCards from "./TechnologiesCards";
 import MapComponent from "./MapComponent";
+import Benefits from "./Benefits";
 
 export {
   Footer,
@@ -12,4 +13,5 @@ export {
   LogoCarousel,
   TechnologiesCards,
   MapComponent,
+  Benefits,
 };

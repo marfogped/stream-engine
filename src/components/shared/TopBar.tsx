@@ -16,15 +16,13 @@ const TopBar: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY.current) {
-        // Scroll down
+      if (currentScrollY > lastScrollY.current && currentScrollY > 300) {
         gsap.to(headerRef.current, {
           y: "-100%",
           duration: 0.5,
           ease: "power4.out",
         });
-      } else {
-        // Scroll up
+      } else if (currentScrollY < lastScrollY.current) {
         gsap.to(headerRef.current, {
           y: "0%",
           duration: 0.5,

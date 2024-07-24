@@ -1,3 +1,4 @@
+import { BenefitsProps } from "../lib/types";
 import icons from "./icons";
 import images from "./images";
 
@@ -118,9 +119,33 @@ const services = [
   },
 ];
 
+const benefits: BenefitsProps[] = [
+  {
+    id: "1",
+    title: "Real-time threat detection",
+    image: "path/to/image-feature-extraction-icon.png",
+  },
+  {
+    id: "2",
+    title: "Comprehensive data analysis",
+    image: "path/to/point-cloud-classification-icon.png",
+  },
+  {
+    id: "3",
+    title: "Scalability",
+    image: "path/to/object-tracking-icon.png",
+  },
+  {
+    id: "4",
+    title: "Actionable insights",
+    image: "path/to/pixel-classification-icon.png",
+  },
+];
+
 export default {
   socials,
   navItems,
   carouselLogos,
   services,
+  benefits,
 };
