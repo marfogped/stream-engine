@@ -3,6 +3,7 @@ import HomeHero from "./hero/HomeHero";
 import HomeServices from "./services/HomeServices";
 import HomeContact from "./contact/HomeContact";
 import HomeTechnologies from "./technologies/HomeTechnologies";
+import Companies from "./companies/Companies";
 import { CustomCursor } from "../../components/ui";
 import {
   LogoCarousel,
@@ -24,6 +25,7 @@ const Homepage: React.FC = () => {
       <LogoCarousel logos={constants.carouselLogos} />
       <HomeServices selectedService={selectedService} />
       <HomeTechnologies />
+      <Companies />
       {/* <Benefits
         benefitsList={constants.benefits}
         title="Leveraging AI for Automated Data Ingestion and Real-Time Threat Detection"
