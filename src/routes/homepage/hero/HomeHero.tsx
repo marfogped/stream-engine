@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ContainerAnimation, Typography } from "../../../components/ui";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
-import { videos } from "../../../constants";
+import { videos, images } from "../../../constants";
 import { useWindowDimensions } from "../../../hooks";
 
 interface HomeHeroProps {
@@ -95,7 +95,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
   }, []);
 
   return (
-    <section className="w-screen overflow-hidden h-[40rem] xl:max-h-screen relative">
+    <section className="w-screen overflow-hidden h-[40rem] xl:max-h-screen xl:h-screen relative">
       <div className="z-10 flex items-center justify-center xl:items-start xl:justify-start xl:translate-y-1/4 xl:w-3/4 absolute page-width top-0 left-0 w-full h-full pointer-events-none leading-none">
         <Typography
           as="h1"
@@ -120,10 +120,16 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
       </div>
       <div
         ref={sectionRef}
-        className="flex h-full w-[200vw] xl:w-screen overflow-hidden"
+        className="flex h-full w-[200vw] xl:w-full overflow-hidden"
       >
         <div
           onClick={() => handleSelectedService("defense")}
+          style={{
+            backgroundImage: `url(${images.DefenseThumbnail})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
           className="w-1/2 video-overlay relative xl:cursor-none xl:hover:w-3/4 transition-all h-full flex items-end group cursor-scale"
         >
           <video
@@ -140,7 +146,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="px-[20px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
+          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none">
             <Typography
               as="h2"
               variant="lg"
@@ -163,6 +169,12 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
 
         <div
           onClick={() => handleSelectedService("advertising")}
+          style={{
+            backgroundImage: `url(${images.AdvertisingThumbnail})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
           className="w-1/2 xl:cursor-none video-overlay xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
         >
           <video
@@ -179,18 +191,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="xl:pl-[100px] xl:group-hover:pl-[200px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
+          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
+              className="text-center xl:pl-[100px] xl:group-hover:pl-[200px] pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white transition-all"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
+              className="text-gray-300 xl:pl-[0px] xl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
             >
               Discover all our AI-powered advertising services at Stream Engine.
               Our cutting-edge technology leverages machine learning to analyze
