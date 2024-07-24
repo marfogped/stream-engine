@@ -5,7 +5,7 @@ import AdvertisingThumbnail from "../assets/img/advertising-video-thumbnail.webp
 import DefenseThumbnail from "../assets/img/defense-video-thumbnail.webp";
 
 import Comcast from "../assets/img/comcast.png";
-import Ea from "../assets/img/ea.png";
+import Ea from "../assets/img/ea.svg";
 import Damage from "../assets/img/damage.png";
 import Endeavor from "../assets/img/endeavor.png";
 import Havas from "../assets/img/havas.png";
