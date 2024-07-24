@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
 import { ContainerAnimation, Typography } from "../../../components/ui";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import { videos } from "../../../constants";
+import { useWindowDimensions } from "../../../hooks";
 
 interface HomeHeroProps {
   setSelectedService: (arg: string) => void;
@@ -10,28 +12,38 @@ interface HomeHeroProps {
 const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
   const defenseVideo = useRef<HTMLVideoElement>(null);
   const advertisingVideo = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { windowWidth } = useWindowDimensions();
 
   const handleMouseEnterDefense = () => {
-    if (defenseVideo.current) {
-      defenseVideo.current.play();
+    if (windowWidth > 1200) {
+      if (defenseVideo.current) {
+        defenseVideo.current.play();
+      }
     }
   };
 
   const handleMouseLeaveDefense = () => {
-    if (defenseVideo.current) {
-      defenseVideo.current.pause();
+    if (windowWidth > 1200) {
+      if (defenseVideo.current) {
+        defenseVideo.current.pause();
+      }
     }
   };
 
   const handleMouseEnterAdvertising = () => {
-    if (advertisingVideo.current) {
-      advertisingVideo.current.play();
+    if (windowWidth > 1200) {
+      if (advertisingVideo.current) {
+        advertisingVideo.current.play();
+      }
     }
   };
 
   const handleMouseLeaveAdvertising = () => {
-    if (advertisingVideo.current) {
-      advertisingVideo.current.pause();
+    if (windowWidth > 1200) {
+      if (advertisingVideo.current) {
+        advertisingVideo.current.pause();
+      }
     }
   };
 
@@ -47,8 +59,43 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
     }
   };
 
+  useEffect(() => {
+    const mediaQuery = gsap.matchMedia();
+
+    mediaQuery.add("(max-width: 1200px)", () => {
+      const slides = sectionRef.current?.children;
+
+      if (slides) {
+        let currentSlide = 0;
+
+        const slideTo = (index: number) => {
+          gsap.to(slides, {
+            xPercent: -100 * index,
+            duration: 0.5,
+            ease: "power4.inOut",
+            zIndex: 2,
+          });
+        };
+
+        const nextSlide = () => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          slideTo(currentSlide);
+        };
+
+        slideTo(0);
+        const interval = setInterval(nextSlide, 10000);
+
+        return () => clearInterval(interval);
+      }
+    });
+
+    return () => {
+      mediaQuery.revert();
+    };
+  }, []);
+
   return (
-    <section className="w-full h-[40rem] xl:max-h-screen relative">
+    <section className="w-screen overflow-hidden h-[40rem] xl:max-h-screen relative">
       <div className="z-10 flex items-center justify-center xl:items-start xl:justify-start xl:translate-y-1/4 xl:w-3/4 absolute page-width top-0 left-0 w-full h-full pointer-events-none leading-none">
         <Typography
           as="h1"
@@ -71,10 +118,13 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           the World Around Us
         </Typography>
       </div>
-      <div className="flex h-full w-full">
+      <div
+        ref={sectionRef}
+        className="flex h-full w-[200vw] xl:w-screen overflow-hidden"
+      >
         <div
           onClick={() => handleSelectedService("defense")}
-          className="xs:w-full sm:w-full relative xl:w-1/2 cursor-none xl:hover:w-3/4 transition-all g-full object-cover xl:bg-center flex items-end group cursor-scale"
+          className="w-1/2 video-overlay relative xl:cursor-none xl:hover:w-3/4 transition-all h-full flex items-end group cursor-scale"
         >
           <video
             ref={defenseVideo}
@@ -82,13 +132,15 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             onMouseLeave={handleMouseLeaveDefense}
             width="960"
             height="1080"
+            autoPlay
+            playsInline
             loop
             muted
-            className="z-[1] w-full h-full object-cover absolute hero-video top-0 left-0"
+            className="w-full h-full object-cover absolute hero-video top-0 left-0"
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="pointer-events-none px-[20px] z-[2] py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
+          <ContainerAnimation className="pointer-events-none px-[20px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
@@ -108,9 +160,10 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             </Typography>
           </ContainerAnimation>
         </div>
+
         <div
           onClick={() => handleSelectedService("advertising")}
-          className="xs:hidden sm:hidden xl:flex xl:w-1/2 cursor-none xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
+          className="w-1/2 xl:cursor-none video-overlay xl:hover:w-3/4 transition-all flex items-end relative group cursor-scale"
         >
           <video
             ref={advertisingVideo}
@@ -118,24 +171,26 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             onMouseLeave={handleMouseLeaveAdvertising}
             width="960"
             height="1080"
+            autoPlay
+            playsInline
             loop
             muted
-            className="z-[1] w-full h-full object-cover absolute hero-video top-0 left-0"
+            className="w-full h-full object-cover absolute hero-video top-0 left-0"
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="pointer-events-none pl-[100px] group-hover:pl-[200px] z-[2] py-16 transition-all flex flex-col items-start gap-2 origin-top">
+          <ContainerAnimation className="pointer-events-none xl:pl-[100px] xl:group-hover:pl-[200px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-gray-400 group-hover:text-white"
+              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 text-center xl:text-start group-hover:opacity-100 opacity-0 transition-all"
+              className="text-gray-300 text-center xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
             >
               Discover all our AI-powered advertising services at Stream Engine.
               Our cutting-edge technology leverages machine learning to analyze
@@ -145,7 +200,6 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           </ContainerAnimation>
         </div>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-[1] pointer-events-none" />
     </section>
   );
 };

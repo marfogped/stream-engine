@@ -3,6 +3,7 @@ import { Typography } from "../ui";
 import { TechnologyProps } from "../../lib/types";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useWindowDimensions } from "../../hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
   className,
   index,
 }) => {
+  const { windowWidth } = useWindowDimensions();
   const cardRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -44,14 +46,18 @@ const TechnologiesCards: React.FC<CardProps> = ({
   }, [index]);
 
   const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
+    if (windowWidth > 1200) {
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
     }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
+    if (windowWidth > 1200) {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
     }
   };
 
@@ -62,7 +68,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
         gridColumn: `span ${technology.cols}`,
         gridRow: `span ${technology.rows}`,
       }}
-      className={`${className} cursor-none flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] lg:h-full rounded-[10px] p-5 relative overflow-hidden group`}
+      className={`${className} xl:cursor-none flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] lg:h-full rounded-[10px] p-5 relative overflow-hidden group`}
     >
       <video
         ref={videoRef}
@@ -72,6 +78,8 @@ const TechnologiesCards: React.FC<CardProps> = ({
         height="480"
         loop
         muted
+        autoPlay
+        playsInline
         className={`z-[1] w-full h-full technology-video object-cover object-center ${
           technology.id === "3" && "scale-[135%]"
         } absolute top-0 left-0`}

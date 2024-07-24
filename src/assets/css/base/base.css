@@ -13,6 +13,11 @@ p {
   text-wrap: balance;
 }
 
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 h1,
 h2,
 h3 {
