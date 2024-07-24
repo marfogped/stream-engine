@@ -37,7 +37,7 @@ const HomeContact: React.FC = () => {
                 className="flex items-center gap-2 underline w-max"
                 href="mailto:info@streamengine.com"
               >
-                info@streamengine.com{" "}
+                info@stream-engine.com{" "}
                 <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
               </a>
             </Typography>
@@ -145,7 +145,7 @@ const HomeContact: React.FC = () => {
           </form>
         </ContainerAnimation>
       </section>
-      <section className="page-width mt-[20px] lg:mt-[40px]">
+      <section className="page-width mt-[20px] lg:mt-[80px]">
         <span className="sr-only">Stream Engine Map Location</span>
         <ContainerAnimation className="h-max w-full rounded-xl overflow-hidden shadow-lg">
           <MapComponent

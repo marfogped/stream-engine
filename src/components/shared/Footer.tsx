@@ -6,19 +6,21 @@ import { ContainerAnimation } from "../ui";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-[80px] lg:mt-[200px]">
+    <footer className="mt-[80px] lg:mt-[80px]">
       <div className="page-width flex xs:flex-col sm:flex-col lg:flex-row items-start lg:items-center justify-between">
         <div className="flex flex-col gap-[20px] items-start">
-          <picture>
-            <img
-              src={images.StreamEngineLogo}
-              alt="Stream Engine Logo"
-              height={100}
-              width={250}
-              loading="lazy"
-              className="mix-blend-difference"
-            />
-          </picture>
+          <Link to={"/"}>
+            <picture>
+              <img
+                src={images.StreamEngineLogo}
+                alt="Stream Engine Logo"
+                height={100}
+                width={250}
+                loading="lazy"
+                className="w-32 mix-blend-difference"
+              />
+            </picture>
+          </Link>
 
           <div className="flex items-center gap-[5px]">
             {constants.socials.map((social) => (
@@ -50,14 +52,14 @@ const Footer: React.FC = () => {
         </div>
 
         <ContainerAnimation className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
-          <Typography as="h2" variant="lg" color="black">
+          <Typography as="h2" variant="md" color="black">
             Company
           </Typography>
           <ul role="list" className="flex flex-col">
             <li className="link-underline w-max">
               <Link to={"/"}>
                 <Typography
-                  variant="md"
+                  variant="sm"
                   className="text-[#4F4F4F] link-underline font-medium"
                 >
                   FAQ
@@ -65,9 +67,9 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li className="link-underline w-max">
-              <Link to={"/"}>
+              <Link to={"/privacy-policy"}>
                 <Typography
-                  variant="md"
+                  variant="sm"
                   className="text-[#4F4F4F] link-underline font-medium"
                 >
                   Privacy Policy
@@ -77,7 +79,7 @@ const Footer: React.FC = () => {
             <li className="link-underline w-max">
               <Link to={"/"}>
                 <Typography
-                  variant="md"
+                  variant="sm"
                   className="text-[#4F4F4F] link-underline font-medium"
                 >
                   Terms of Service

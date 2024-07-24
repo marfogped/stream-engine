@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HomeHero from "./hero/HomeHero";
 import HomeServices from "./services/HomeServices";
 import HomeContact from "./contact/HomeContact";
@@ -12,6 +12,10 @@ import { constants } from "../../constants";
 
 const Homepage: React.FC = () => {
   const [selectedService, setSelectedService] = useState<string>("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

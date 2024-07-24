@@ -58,16 +58,16 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
         <TabPanels className="h-full">
           <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
-              <div className="flex flex-col gap-5 leading-none">
+              <div className="flex flex-col gap-8 leading-none">
                 <Typography as="h2" variant="xl" color="white">
                   Defense Community
                 </Typography>
-                <Typography as="p" variant="md" className="text-gray-300">
-                  We ingest large data sets to recognize behavioral patterns and
-                  threats in real time across video, audio, text and still
-                  image.
-                </Typography>
                 <div className="flex flex-col gap-5">
+                  <Typography as="p" variant="md" className="text-gray-300">
+                    We ingest large data sets to recognize behavioral patterns
+                    and threats in real time across video, audio, text and still
+                    image.
+                  </Typography>
                   <Typography as="p" variant="md" className="text-gray-300">
                     Using AI for automated data ingestion to recognize threats
                     in real time:
@@ -119,15 +119,17 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
           </TabPanel>
           <TabPanel className="flex flex-col lg:flex-row h-full !p-0 gap-5 !pr-[20px] lg:!pr-0">
             <div className="flex flex-col gap-10 lg:w-full lg:justify-between py-10">
-              <div className="flex flex-col gap-5 leading-none">
+              <div className="flex flex-col gap-8 leading-none">
                 <Typography as="h2" variant="xl" color="white">
                   Advertising Industry
                 </Typography>
-                <Typography as="p" variant="md" className="text-gray-300">
-                  The world's only accurate media valuation tool - analyzing
-                  logo recognition, voice callouts, and chat mentions in real
-                  time.
-                </Typography>
+                <div className="flex flex-col gap-5">
+                  <Typography as="p" variant="md" className="text-gray-300">
+                    The world's only accurate media valuation tool - analyzing
+                    logo recognition, voice callouts, and chat mentions in real
+                    time.
+                  </Typography>
+                </div>
               </div>
 
               <Button

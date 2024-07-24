@@ -3,7 +3,7 @@ import { images } from "../../constants";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../ui";
 import { constants } from "../../constants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 
 const TopBar: React.FC = () => {
@@ -11,6 +11,7 @@ const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,24 +50,25 @@ const TopBar: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <header
       ref={headerRef}
-      className={`page-width py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors ${
+      className={`page-width ${
+        location.pathname === "/privacy-policy" && "bg-white/80 backdrop-blur"
+      } py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors ${
         scrolled
           ? "bg-white/80 backdrop-blur"
-          : `${isMenuOpen ? "bg-white/80 backdrop-blur" : "bg-transparent"}`
+          : `${isMenuOpen ? "bg-white/80 backdrop-blur" : `bg-transparent`}`
       }`}
     >
-      <div>
+      <Link to={"/"}>
         <img
           src={images.StreamEngineLogo}
           alt="Stream Engine Logo"
           loading="lazy"
           className="w-32 mix-blend-difference"
         />
-      </div>
+      </Link>
       <nav className="xs:hidden sm:hidden md:flex gap-5">
         {constants.navItems.map((item) => (
           <a href={item.path} key={item.key}>
