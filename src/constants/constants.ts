@@ -102,6 +102,42 @@ const carouselLogos = [
     image: images.Uta,
     alt: "Uta Logo",
   },
+  {
+    image: images.Defenswex,
+    alt: "Defenswerx Logo",
+  },
+  {
+    image: images.Epic,
+    alt: "Epic Logo",
+  },
+  {
+    image: images.Geico,
+    alt: "Geico Logo",
+  },
+  {
+    image: images.Intel,
+    alt: "Intel Logo",
+  },
+  {
+    image: images.Mls,
+    alt: "Mls Logo",
+  },
+  {
+    image: images.Omega,
+    alt: "Omega Logo",
+  },
+  {
+    image: images.OpticGaming,
+    alt: "Optic Gaming Logo",
+  },
+  {
+    image: images.PaneraBread,
+    alt: "Panera Bread Logo",
+  },
+  {
+    image: images.Roccat,
+    alt: "Roccat Logo",
+  },
 ];
 
 const services = [
@@ -123,22 +159,26 @@ const benefits: BenefitsProps[] = [
   {
     id: "1",
     title: "Real-time threat detection",
-    image: "path/to/image-feature-extraction-icon.png",
+    image:
+      "https://images.unsplash.com/photo-1676676701269-65de47175adf?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "2",
     title: "Comprehensive data analysis",
-    image: "path/to/point-cloud-classification-icon.png",
+    image:
+      "https://images.unsplash.com/photo-1619910301459-ffd575f32651?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "3",
     title: "Scalability",
-    image: "path/to/object-tracking-icon.png",
+    image:
+      "https://images.unsplash.com/photo-1601690893510-097a654804c2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "4",
     title: "Actionable insights",
-    image: "path/to/pixel-classification-icon.png",
+    image:
+      "https://images.unsplash.com/photo-1644688389824-adbf547b229f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
