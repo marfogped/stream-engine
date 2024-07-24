@@ -7,12 +7,16 @@ import "./index.css";
 import RootLayout from "./layouts/root-layout";
 
 import Homepage from "./routes/homepage/Homepage";
+import PrivacyPolicy from "./routes/privacy-policy/PrivacyPolicy";
 import NotFound from "./components/shared/NotFound";
 
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
-    children: [{ path: "/", element: <Homepage /> }],
+    children: [
+      { path: "/", element: <Homepage /> },
+      { path: "/privacy-policy", element: <PrivacyPolicy /> },
+    ],
     errorElement: <NotFound />,
   },
 ]);
