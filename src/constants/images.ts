@@ -15,7 +15,6 @@ import Pga from "../assets/img/pga.png";
 import Teamenvy from "../assets/img/teamenvy.png";
 import Usta from "../assets/img/usta.png";
 import Uta from "../assets/img/uta.png";
-import Defenswex from "../assets/img/defenswerx-logo.png";
 import Epic from "../assets/img/epic-logo.png";
 import Geico from "../assets/img/geico-logo.svg";
 import Intel from "../assets/img/Intel-logo.png";
@@ -42,7 +41,6 @@ export default {
   Teamenvy,
   Usta,
   Uta,
-  Defenswex,
   Epic,
   Geico,
   Intel,

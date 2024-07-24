@@ -103,10 +103,6 @@ const carouselLogos = [
     alt: "Uta Logo",
   },
   {
-    image: images.Defenswex,
-    alt: "Defenswerx Logo",
-  },
-  {
     image: images.Epic,
     alt: "Epic Logo",
   },
