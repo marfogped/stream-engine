@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typography } from "../ui";
 import { BenefitsProps } from "../../lib/types";
 
@@ -6,18 +6,18 @@ interface BenefitsComponentProps {
   title: string;
   description: string;
   benefitsList: Array<BenefitsProps>;
-  backgroundImage: string;
 }
 
 const Benefits: React.FC<BenefitsComponentProps> = ({
   title,
   description,
-  backgroundImage,
   benefitsList,
 }) => {
+  const [selectedImage, setSelectedImage] = useState<string>("");
+
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen">
-      <div className="lg:w-1/2 p-8 bg-black text-white">
+    <div className="flex flex-col lg:flex-row min-h-[75vh] pt-[80px]">
+      <div className="p-[20px] xl:p-[100px] lg:w-1/2 bg-black text-white">
         <Typography as="h2" variant="lg" color="white">
           {title}
         </Typography>
@@ -32,12 +32,15 @@ const Benefits: React.FC<BenefitsComponentProps> = ({
             ? benefitsList.map((benefit, benefitIdx) => (
                 <li
                   key={`${benefit.title}-${benefitIdx}`}
-                  className="mb-4 p-4 bg-gray-800 w-full h-full rounded flex items-center"
+                  className="mb-4 p-4 bg-[#3D3D3D] w-full h-full rounded flex items-center cursor-pointer"
+                  onClick={() => setSelectedImage(benefit.image)}
                 >
                   <img
                     src={benefit.image}
-                    alt="Real-time Threat Detection"
-                    className="w-min h-12 mr-4 rounded-full object-cover"
+                    alt={benefit.title}
+                    height={48}
+                    width={48}
+                    className="w-12 h-12 mr-4 rounded-full object-cover"
                   />
                   <Typography as="p" variant="sm" className="text-gray-300">
                     {benefit.title}
@@ -47,13 +50,10 @@ const Benefits: React.FC<BenefitsComponentProps> = ({
             : ""}
         </ul>
       </div>
-      <div className="lg:w-1/2 h-full">
-        <img
-          src={backgroundImage}
-          alt={`${title} Background`}
-          className="object-cover h-full w-full"
-        />
-      </div>
+      <div
+        className="w-full lg:w-1/2 min-h-[75vh] bg-cover bg-center transition-all"
+        style={{ backgroundImage: `url(${selectedImage})` }}
+      ></div>
     </div>
   );
 };
