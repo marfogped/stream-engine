@@ -140,18 +140,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="pointer-events-none px-[20px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
+          <ContainerAnimation className="px-[20px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
+              className="text-center pointer-events-none xl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
             >
               Defense Community <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 xl:group-hover:pl-[200px] text-center xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
+              className="text-gray-300 xl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
             >
               Enhance your defense operations with Stream Engine's AI-driven
               solutions. Our advanced technology utilizes machine learning to
@@ -179,18 +179,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="pointer-events-none xl:pl-[100px] xl:group-hover:pl-[200px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
+          <ContainerAnimation className="xl:pl-[100px] xl:group-hover:pl-[200px] z-10 py-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
+              className="text-center pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 text-center xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
+              className="text-gray-300 text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
             >
               Discover all our AI-powered advertising services at Stream Engine.
               Our cutting-edge technology leverages machine learning to analyze
