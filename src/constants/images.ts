@@ -1,11 +1,11 @@
-import StreamEngineLogo from "../assets/img/stream-engine-logo.svg";
+import StreamEngineLogo from "../assets/img/stream-engine-logo.png";
 import DefenseBackground from "../assets/img/defense-background.webp";
 import AdvertisingBackground from "../assets/img/advisory-background.webp";
 import AdvertisingThumbnail from "../assets/img/advertising-video-thumbnail.webp";
 import DefenseThumbnail from "../assets/img/defense-video-thumbnail.webp";
 
 import Comcast from "../assets/img/comcast.png";
-import Ea from "../assets/img/ea.svg";
+import Ea from "../assets/img/ea.png";
 import Damage from "../assets/img/damage.png";
 import Endeavor from "../assets/img/endeavor.png";
 import Havas from "../assets/img/havas.png";
@@ -16,12 +16,12 @@ import Teamenvy from "../assets/img/teamenvy.png";
 import Usta from "../assets/img/usta.png";
 import Uta from "../assets/img/uta.png";
 import Epic from "../assets/img/epic-logo.png";
-import Geico from "../assets/img/geico-logo.svg";
+import Geico from "../assets/img/geico-logo.png";
 import Intel from "../assets/img/Intel-logo.png";
-import Mls from "../assets/img/mls-logo.svg";
-import Omega from "../assets/img/omega-logo.svg";
-import OpticGaming from "../assets/img/optic-gaming-logo.svg";
-import PaneraBread from "../assets/img/panera-bread-logo.svg";
+import Mls from "../assets/img/mls-logo.png";
+import Omega from "../assets/img/omega-logo.png";
+import OpticGaming from "../assets/img/optic-gaming-logo.png";
+import PaneraBread from "../assets/img/panera-bread-logo.png";
 import Roccat from "../assets/img/roccat-logo.png";
 
 export default {
