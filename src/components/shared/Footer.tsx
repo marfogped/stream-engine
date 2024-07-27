@@ -1,7 +1,9 @@
 import React from "react";
 import { Typography } from "../ui";
 import { Link } from "react-router-dom";
-import { images, constants } from "../../constants";
+import { images, 
+  // constants 
+} from "../../constants";
 import { ContainerAnimation } from "../ui";
 
 const Footer: React.FC = () => {
@@ -22,7 +24,7 @@ const Footer: React.FC = () => {
             </picture>
           </Link>
 
-          <div className="flex items-center gap-[5px]">
+          {/* <div className="flex items-center gap-[5px]">
             {constants.socials.map((social) => (
               <a
                 aria-label={`${social.alt}`}
@@ -48,7 +50,7 @@ const Footer: React.FC = () => {
                 )}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <ContainerAnimation className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
