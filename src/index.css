@@ -9,17 +9,14 @@
   padding-inline: 20px;
 }
 
-.page-y-padding {
-  padding-block: 80px;
-}
-
 @media only screen and (min-width: 1200px) {
   .page-width {
-    padding-inline: 200px;
+    padding-inline: 100px;
   }
-
-  .page-y-padding {
-    padding-block: 120px;
+}
+@media only screen and (min-width: 1920px) {
+  .page-width {
+    padding-inline: 200px;
   }
 }
 
