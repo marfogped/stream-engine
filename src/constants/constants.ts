@@ -47,9 +47,9 @@ const navItems = [
     key: "services-opt",
   },
   {
-    label: "Technologies",
+    label: "Technology",
     path: "/",
-    key: "technologies-opt",
+    key: "technology-opt",
   },
   {
     label: "Contact",
