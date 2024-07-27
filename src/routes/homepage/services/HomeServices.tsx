@@ -40,12 +40,12 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
         <TabList className="w-max">
           <Tab>
             <Typography as="h2" variant="md" color="white">
-              DEFENSE COMMUNITY
+              DEFENSE
             </Typography>
           </Tab>
           <Tab>
             <Typography as="h2" variant="md" color="white">
-              ADVERTISING INDUSTRY
+              ADVERTISING
             </Typography>
           </Tab>
         </TabList>

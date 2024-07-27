@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../../../components/ui";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { constants } from "../../../constants";
+// import { constants } from "../../../constants";
 import { ContainerAnimation } from "../../../components/ui";
 import { MapComponent } from "../../../components/shared";
 
@@ -35,14 +35,14 @@ const HomeContact: React.FC = () => {
             <Typography as="p" variant="md" className="text-gray-700">
               <a
                 className="flex items-center gap-2 underline w-max"
-                href="mailto:info@streamengine.com"
+                href="mailto:info@stream-engine.io"
               >
-                info@stream-engine.com{" "}
+                info@stream-engine.io{" "}
                 <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
               </a>
             </Typography>
 
-            <div className="flex items-center gap-[5px]">
+            {/* <div className="flex items-center gap-[5px]">
               {constants.socials.map((social) => (
                 <a
                   aria-label={`${social.alt}`}
@@ -68,7 +68,7 @@ const HomeContact: React.FC = () => {
                   )}
                 </a>
               ))}
-            </div>
+            </div> */}
           </ContainerAnimation>
         </div>
 
