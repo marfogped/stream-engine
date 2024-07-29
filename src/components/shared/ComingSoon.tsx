@@ -3,7 +3,7 @@ import { Typography } from '../ui'
 
 const ComingSoon:React.FC = () => {
   return (
-    <div className="grid h-screen place-content-center bg-white px-4">
+    <div className="grid h-screen place-content-center text-center bg-white px-4">
         <Typography as="h1" variant="xl" className="uppercase tracking-widest text-gray-700">
             Coming Soon
         </Typography>
