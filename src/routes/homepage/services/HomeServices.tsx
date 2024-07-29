@@ -8,7 +8,6 @@ import {
   TabPanel,
   TabIndicator,
 } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
 import { Typography } from "../../../components/ui";
 import { images } from "../../../constants";
 import { ScrollTo } from "../../../components/shared";
