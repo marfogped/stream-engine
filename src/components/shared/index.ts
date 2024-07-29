@@ -5,6 +5,7 @@ import LogoCarousel from "./LogoCarousel";
 import TechnologiesCards from "./TechnologiesCards";
 import MapComponent from "./MapComponent";
 import Benefits from "./Benefits";
+import ScrollTo from "./ScrollTo";
 
 export {
   Footer,
@@ -14,4 +15,5 @@ export {
   TechnologiesCards,
   MapComponent,
   Benefits,
+  ScrollTo
 };

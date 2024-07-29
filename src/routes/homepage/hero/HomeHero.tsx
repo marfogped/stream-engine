@@ -152,7 +152,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
               variant="lg"
               className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
             >
-              Defense Community <ArrowDownIcon className="h-6 w-6" />
+              Defense Sector <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"

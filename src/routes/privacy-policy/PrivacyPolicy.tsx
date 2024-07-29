@@ -50,7 +50,7 @@ const PrivacyPolicy: React.FC = () => {
         and/or for compliance with our legal obligations. We use the information
         we collect or receive:
       </Typography>
-      <ul className="text-gray-700">
+      <ul className="list-disc text-black">
         <li className="list-item">
           {" "}
           <Typography as="p" variant="md" className="text-gray-700">

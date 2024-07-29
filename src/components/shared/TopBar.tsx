@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { images } from "../../constants";
+import ScrollTo from "./ScrollTo";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../ui";
 import { constants } from "../../constants";
@@ -71,7 +72,7 @@ const TopBar: React.FC = () => {
       </Link>
       <nav className="xs:hidden sm:hidden md:flex gap-5">
         {constants.navItems.map((item) => (
-          <a href={item.path} key={item.key}>
+          <ScrollTo id={item.path} key={item.key}>
             <Typography
               color="white"
               variant="sm"
@@ -79,7 +80,7 @@ const TopBar: React.FC = () => {
             >
               {item.label}
             </Typography>
-          </a>
+          </ScrollTo>
         ))}
       </nav>
       <div className="xs:flex sm:flex md:hidden">
@@ -99,16 +100,16 @@ const TopBar: React.FC = () => {
       {isMenuOpen && (
         <nav className="absolute origin-top top-20 left-0 w-full bg-white/80 p-5 flex flex-col items-center md:hidden">
           {constants.navItems.map((item) => (
-            <Link
+            <ScrollTo 
+              id={item.path}
               key={item.key}
               onClick={toggleMenu}
               className="link-underline"
-              to={item.path}
             >
               <Typography color="black" variant="md" className="font-medium">
                 {item.label}
               </Typography>
-            </Link>
+            </ScrollTo>
           ))}
         </nav>
       )}

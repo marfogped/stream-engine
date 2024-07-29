@@ -14,7 +14,7 @@ const HomeContact: React.FC = () => {
 
   return (
     <>
-      <section className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px]">
+      <section id="contact" className="page-width flex xs:flex-col sm:flex-col lg:flex-row justify-start lg:mt-[80px]">
         <div className="flex flex-col w-full mt-[80px] lg:mt-[0] justify-between">
           <ContainerAnimation className="flex flex-col">
             <Typography

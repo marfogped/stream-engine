@@ -11,6 +11,8 @@ import {
 import { Button } from "@chakra-ui/react";
 import { Typography } from "../../../components/ui";
 import { images } from "../../../constants";
+import { ScrollTo } from "../../../components/shared";
+
 interface HomeServicesProps {
   selectedService: string;
 }
@@ -74,7 +76,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                     in real time:
                   </Typography>
 
-                  <ul role="list" className="flex flex-col gap-2">
+                  <ul role="list" className="list-disc text-primary flex flex-col gap-2">
                     <li className="list-item">
                       <Typography as="p" variant="md" className="text-gray-300">
                         Real-time threat detection
@@ -99,14 +101,13 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                 </div>
               </div>
 
-              <Button
-                bg="#F8F603"
-                _hover={{ bg: "#F8F603" }}
-                size="lg"
-                className="w-full xl:w-max"
+              <ScrollTo 
+              id="contact"
+              isChakraButton={true}
+              className="w-full xl:w-max"
               >
                 Get in Touch
-              </Button>
+              </ScrollTo>
             </div>
 
             <div className="w-full">
@@ -134,14 +135,13 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                 </div>
               </div>
 
-              <Button
-                bg="#F8F603"
-                _hover={{ bg: "#F8F603" }}
-                size="lg"
-                className="w-full xl:w-max"
+              <ScrollTo 
+              id="contact"
+              isChakraButton={true}
+              className="w-full xl:w-max"
               >
                 Get in Touch
-              </Button>
+              </ScrollTo>
             </div>
 
             <div className="w-full">

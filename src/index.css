@@ -84,11 +84,6 @@
   transform: translate(-50%, -50%);
 }
 
-.list-item::marker {
-  content: "🟡 ";
-  font-size: 0.5rem;
-}
-
 .video-overlay::before {
   content: "";
   position: absolute;

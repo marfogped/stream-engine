@@ -43,17 +43,17 @@ const socials = [
 const navItems = [
   {
     label: "Services",
-    path: "/",
+    path: "services",
     key: "services-opt",
   },
   {
     label: "Technology",
-    path: "/",
+    path: "technology",
     key: "technology-opt",
   },
   {
     label: "Contact",
-    path: "/",
+    path: "contact",
     key: "contact-opt",
   },
 ];

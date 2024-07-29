@@ -59,32 +59,12 @@ const Footer: React.FC = () => {
           </Typography>
           <ul role="list" className="flex flex-col">
             <li className="link-underline w-max">
-              <Link to={"/"}>
-                <Typography
-                  variant="sm"
-                  className="text-[#4F4F4F] link-underline font-medium"
-                >
-                  FAQ
-                </Typography>
-              </Link>
-            </li>
-            <li className="link-underline w-max">
               <Link to={"/privacy-policy"}>
                 <Typography
                   variant="sm"
                   className="text-[#4F4F4F] link-underline font-medium"
                 >
                   Privacy Policy
-                </Typography>
-              </Link>
-            </li>
-            <li className="link-underline w-max">
-              <Link to={"/"}>
-                <Typography
-                  variant="sm"
-                  className="text-[#4F4F4F] link-underline font-medium"
-                >
-                  Terms of Service
                 </Typography>
               </Link>
             </li>
