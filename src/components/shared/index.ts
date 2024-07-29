@@ -6,6 +6,8 @@ import TechnologiesCards from "./TechnologiesCards";
 import MapComponent from "./MapComponent";
 import Benefits from "./Benefits";
 import ScrollTo from "./ScrollTo";
+import ComingSoon from "./ComingSoon";
+import Loader from "./Loader";
 
 export {
   Footer,
@@ -15,5 +17,7 @@ export {
   TechnologiesCards,
   MapComponent,
   Benefits,
-  ScrollTo
+  ScrollTo,
+  ComingSoon,
+  Loader
 };
