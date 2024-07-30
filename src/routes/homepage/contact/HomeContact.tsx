@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, useToast } from "@chakra-ui/react";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../../../components/ui";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
@@ -17,6 +17,7 @@ const HomeContact: React.FC = () => {
   });
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const toast = useToast()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -59,10 +60,22 @@ const HomeContact: React.FC = () => {
         import.meta.env.VITE_REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
-      console.log('Email sent successfully:', response);
+      if(response) toast({
+        title: 'Message sent successfully!.',
+        description: "We'll responde promptly.",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+
     } catch (error) {
-      console.error('Error sending email:', error);
-      setError("Failed to send message. Please try again later.");
+      toast({
+        title: 'Failed to send message.',
+        description: "Please try again later.",
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
     } finally {
       setIsSubmitting(false);
     }
