@@ -1,5 +1,5 @@
 import DefenseVideo from "../assets/videos/defense-video.mp4";
-import AdvertisingVideo from "../assets/videos/advertising-video.mp4";
+import AdvertisingVideo from "../assets/videos/advertising-industry-video.mp4";
 
 import SocialTechBackground from "../assets/videos/chat-video.mp4";
 import TranslationsTechBackground from "../assets/videos/translations-video.mp4";

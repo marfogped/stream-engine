@@ -1,7 +1,7 @@
 import StreamEngineLogo from "../assets/img/stream-engine-logo.png";
 import DefenseBackground from "../assets/img/defense-background.webp";
 import AdvertisingBackground from "../assets/img/advisory-background.webp";
-import AdvertisingThumbnail from "../assets/img/advertising-video-thumbnail.webp";
+import AdvertisingThumbnail from "../assets/img/advertising-industry-thumbnail.png";
 import DefenseThumbnail from "../assets/img/defense-video-thumbnail.webp";
 
 import Comcast from "../assets/img/comcast.png";
