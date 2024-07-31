@@ -146,7 +146,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none">
+          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none relative w-11/12 mx-auto xxl:w-3/4 h-1/3">
             <Typography
               as="h2"
               variant="lg"
@@ -157,7 +157,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
+              className="text-gray-300 xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
             >
               We assist the defense and cyber security community to detect potential threats by ingesting large datasets, utilizing trained models to recognize patterns across video, audio, text and still images. We equip our warfighters with modern tools to win the information war and keep us protected from threats.
             </Typography>
@@ -188,7 +188,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.AdvertisingVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none">
+          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col w-11/12 mx-auto xxl:w-3/4 h-1/3 items-center xl:items-start gap-2 origin-top pointer-events-none relative">
             <Typography
               as="h2"
               variant="lg"
@@ -199,7 +199,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 xl:pl-[0px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all"
+              className="text-gray-300 xl:pl-[0px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
             >
               We help global advertisers uncover competitive insights by leveraging machine learning and AI to analyze and categorize media at scale across OTT, social, and digital media. We provide advertisers with accurate media intelligence in real-time. 
             </Typography>

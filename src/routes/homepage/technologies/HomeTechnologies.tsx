@@ -56,7 +56,7 @@ const technologies = [
 const HomeTechnologies: React.FC = () => {
   return (
     <section id="technology" className="page-width">
-      <ContainerAnimation className="flex flex-col gap-2 mt-[80px]">
+      <ContainerAnimation className="flex flex-col gap-2 mt-10 lg:mt-20">
         <Typography as="h2" variant="xl" color="black">
           Our Technology
         </Typography>

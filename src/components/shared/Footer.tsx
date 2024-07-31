@@ -1,15 +1,13 @@
 import React from "react";
 import { Typography } from "../ui";
 import { Link } from "react-router-dom";
-import { images, 
-  // constants 
-} from "../../constants";
+import { images, constants } from "../../constants";
 import { ContainerAnimation } from "../ui";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-[80px] lg:mt-[80px]">
-      <div className="page-width flex xs:flex-col sm:flex-col lg:flex-row items-start lg:items-center justify-between">
+    <footer className="mt-20">
+      <div className="page-width flex xs:flex-col sm:flex-col md:flex-row items-start lg:items-center justify-between">
         <div className="flex flex-col gap-[20px] items-start">
           <Link to={"/"}>
             <picture>
@@ -24,7 +22,7 @@ const Footer: React.FC = () => {
             </picture>
           </Link>
 
-          {/* <div className="flex items-center gap-[5px]">
+          <div className="flex items-center gap-[5px]">
             {constants.socials.map((social) => (
               <a
                 aria-label={`${social.alt}`}
@@ -33,9 +31,6 @@ const Footer: React.FC = () => {
                 target="_blank"
                 className="cursor-pointer transition-all hover:scale-125"
               >
-                {social.name.toLowerCase() === "whatsapp" && (
-                  <social.icon className="text-black" />
-                )}
                 {social.name.toLowerCase() === "linkedin" && (
                   <social.icon className="text-black" />
                 )}
@@ -45,15 +40,12 @@ const Footer: React.FC = () => {
                 {social.name.toLowerCase() === "x" && (
                   <social.icon className="text-black" />
                 )}
-                {social.name.toLowerCase() === "facebook" && (
-                  <social.icon className="text-black" />
-                )}
               </a>
             ))}
-          </div> */}
+          </div>
         </div>
 
-        <ContainerAnimation className="flex flex-col gap-[10px] xs:mt-[80px] md:mt-[80px] lg:mt-[0px]">
+        <ContainerAnimation className="flex flex-col gap-[10px] xs:mt-20 sm:mt-20 lg:mt-0">
           <Typography as="h2" variant="md" color="black">
             Company
           </Typography>

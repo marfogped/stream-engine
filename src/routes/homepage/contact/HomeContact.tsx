@@ -5,6 +5,7 @@ import { Typography } from "../../../components/ui";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { ContainerAnimation } from "../../../components/ui";
 import { MapComponent } from "../../../components/shared";
+import { constants } from "../../../constants";
 import emailjs from '@emailjs/browser';
 
 const HomeContact: React.FC = () => {
@@ -83,7 +84,7 @@ const HomeContact: React.FC = () => {
 
   return (
     <>
-      <section id="contact" className="page-width flex flex-col lg:flex-row justify-start lg:mt-20">
+      <section id="contact" className="page-width flex flex-col lg:flex-row justify-start mt-10 lg:mt-20 gap-5">
         <div className="flex flex-col w-full lg:mt-0 justify-between">
           <ContainerAnimation className="flex flex-col">
             <Typography as="h2" variant="xl" color="black" className="leading-tight">
@@ -103,6 +104,27 @@ const HomeContact: React.FC = () => {
                 info@stream-engine.io <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
               </a>
             </Typography>
+            <div className="flex items-center gap-[5px]">
+              {constants.socials.map((social) => (
+                <a
+                  aria-label={`${social.alt}`}
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  className="cursor-pointer transition-all hover:scale-125"
+                >
+                  {social.name.toLowerCase() === "linkedin" && (
+                    <social.icon className="text-gray-700" />
+                  )}
+                  {social.name.toLowerCase() === "instagram" && (
+                    <social.icon className="text-gray-700" />
+                  )}
+                  {social.name.toLowerCase() === "x" && (
+                    <social.icon className="text-gray-700" />
+                  )}
+                </a>
+              ))}
+            </div>
           </ContainerAnimation>
         </div>
 

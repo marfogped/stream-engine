@@ -82,9 +82,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
         autoPlay={isMobileResolution}
         playsInline={isMobileResolution}
         onCanPlay={handleVideoLoaded}
-        className={`z-[1] w-full h-full technology-video scale-[135%] object-cover ${
-          technology.id === "1" && "lg:scale-100"
-        } absolute top-0 left-0`}
+        className={`z-[1] w-full h-full technology-video object-cover object-bottom absolute top-0 left-0`}
       >
         <source src={technology.video} type="video/mp4" />
       </video>

@@ -10,11 +10,15 @@ interface ScrollToProps {
   onClick?: () => void
 }
 
-const ScrollTo: React.FC<ScrollToProps> = ({ id, className, size, isChakraButton = false, children }) => {
+const ScrollTo: React.FC<ScrollToProps> = ({ id, className, size, onClick, isChakraButton = false, children }) => {
   const scrollToSection = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (onClick) {
+      onClick();
     }
   };
 

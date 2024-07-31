@@ -48,15 +48,14 @@ const TopBar: React.FC = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   return (
     <header
       ref={headerRef}
       className={`page-width ${
         location.pathname === "/privacy-policy" && "bg-white/80 backdrop-blur"
-      } py-4 lg:py-5 flex items-center justify-between fixed w-screen z-50 transition-colors ${
+      } py-4 lg:py-5 flex items-center justify-between fixed w-full z-50 transition-colors ${
         scrolled
           ? "bg-white/80 backdrop-blur"
           : `${isMenuOpen ? "bg-white/80 backdrop-blur" : `bg-transparent`}`
@@ -97,14 +96,14 @@ const TopBar: React.FC = () => {
         )}
       </div>
 
-      {isMenuOpen && (
-        <nav className="absolute origin-top top-20 left-0 w-full bg-white/80 p-5 flex flex-col items-center md:hidden">
+      {isMenuOpen ? (
+        <nav className="absolute gap-2 origin-top top-20 left-0 w-full bg-white/80 p-5 flex flex-col items-start md:hidden">
           {constants.navItems.map((item) => (
             <ScrollTo 
               id={item.path}
               key={item.key}
               onClick={toggleMenu}
-              className="link-underline"
+              className="link-underline w-max"
             >
               <Typography color="black" variant="md" className="font-medium">
                 {item.label}
@@ -112,7 +111,7 @@ const TopBar: React.FC = () => {
             </ScrollTo>
           ))}
         </nav>
-      )}
+      ) : ("")}
     </header>
   );
 };

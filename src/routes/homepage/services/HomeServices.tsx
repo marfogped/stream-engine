@@ -38,7 +38,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
         index={tabIndex}
         onChange={(index) => setTabIndex(index)}
       >
-        <TabList className="w-max">
+        <TabList className="w-max xl:pl-[100px] xxl:pl-[200px]">
           <Tab>
             <Typography as="h2" variant="md" color="white">
               DEFENSE
@@ -114,7 +114,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
                 src={images.DefenseBackground}
                 alt="Defense Community Image"
                 loading="lazy"
-                className="h-[350px] lg:h-[40vh] xl:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
+                className="h-[350px] lg:h-full xl:h-[80vh] rounded-[10px] lg:rounded-none w-full object-cover"
               />
             </div>
           </TabPanel>
@@ -147,7 +147,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
               <img
                 src={images.AdvertisingBackground}
                 alt="Advertising Industry Image"
-                className="h-[350px] lg:h-[40vh] xl:h-[80vh] object-cover top-0 rounded-[10px] lg:rounded-none w-full"
+                className="h-[350px] lg:h-full xl:h-[80vh] object-cover object-top top-0 rounded-[10px] lg:rounded-none w-full"
                 loading="lazy"
               />
             </div>
