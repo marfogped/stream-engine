@@ -6,7 +6,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { ContainerAnimation } from "../../../components/ui";
 import { MapComponent } from "../../../components/shared";
 import { constants } from "../../../constants";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const HomeContact: React.FC = () => {
   const [formValues, setFormValues] = useState({
@@ -14,22 +14,29 @@ const HomeContact: React.FC = () => {
     lastName: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const toast = useToast()
+  const toast = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({
       ...prevValues,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const validateForm = () => {
-    if (!formValues.firstName || !formValues.lastName || !formValues.email || !formValues.message) {
+    if (
+      !formValues.firstName ||
+      !formValues.lastName ||
+      !formValues.email ||
+      !formValues.message
+    ) {
       setError("All fields are required.");
       return false;
     }
@@ -61,22 +68,22 @@ const HomeContact: React.FC = () => {
         import.meta.env.VITE_REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
-      if(response) toast({
-        title: 'Message sent successfully!.',
-        description: "We'll responde promptly.",
-        status: 'success',
-        duration: 9000,
-        isClosable: true,
-      })
-
+      if (response)
+        toast({
+          title: "Message sent successfully!.",
+          description: "We'll responde promptly.",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
     } catch (error) {
       toast({
-        title: 'Failed to send message.',
+        title: "Failed to send message.",
         description: "Please try again later.",
-        status: 'error',
+        status: "error",
         duration: 9000,
         isClosable: true,
-      })
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -84,14 +91,23 @@ const HomeContact: React.FC = () => {
 
   return (
     <>
-      <section id="contact" className="page-width flex flex-col lg:flex-row justify-start mt-10 lg:mt-20 gap-5">
+      <section
+        id="contact"
+        className="page-width flex flex-col lg:flex-row justify-start mt-10 lg:mt-20 gap-5"
+      >
         <div className="flex flex-col w-full lg:mt-0 justify-between">
           <ContainerAnimation className="flex flex-col">
-            <Typography as="h2" variant="xl" color="black" className="leading-tight">
+            <Typography
+              as="h2"
+              variant="xl"
+              color="black"
+              className="leading-tight"
+            >
               Contact Us
             </Typography>
             <Typography as="p" variant="md" className="text-gray-700">
-              Get in touch with us to learn more about our innovative solutions, ask questions, or receive support.
+              Get in touch with us to learn more about our innovative solutions,
+              ask questions, or receive support.
             </Typography>
           </ContainerAnimation>
 
@@ -101,7 +117,8 @@ const HomeContact: React.FC = () => {
                 className="flex items-center gap-2 underline w-max"
                 href="mailto:info@stream-engine.io"
               >
-                info@stream-engine.io <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
+                info@stream-engine.io{" "}
+                <ArrowTopRightOnSquareIcon className="w-6 h-6" />{" "}
               </a>
             </Typography>
             <div className="flex items-center gap-[5px]">
@@ -129,7 +146,10 @@ const HomeContact: React.FC = () => {
         </div>
 
         <ContainerAnimation className="w-full h-full">
-          <form onSubmit={sendMessage} className="flex flex-col items-center gap-6 w-full mt-10 lg:mt-0">
+          <form
+            onSubmit={sendMessage}
+            className="flex flex-col items-center gap-6 w-full mt-10 lg:mt-0"
+          >
             <div className="grid gap-6 sm:grid-cols-2 w-full">
               <div className="relative z-0">
                 <input
@@ -213,7 +233,7 @@ const HomeContact: React.FC = () => {
         <ContainerAnimation className="h-max w-full rounded-xl overflow-hidden shadow-lg">
           <MapComponent
             position={[34.0522, -118.2437]}
-            className="xl:h-100 h-50 w-full"
+            className="xl:h-96 h-64 w-full"
           />
         </ContainerAnimation>
       </section>
