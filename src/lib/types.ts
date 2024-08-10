@@ -26,3 +26,11 @@ export interface BenefitsProps {
   title: string;
   image: string;
 }
+
+export interface Career {
+  jobDescription: string;
+  company: string;
+  role: string;
+  responsibilities: string[];
+  skillsAndExperience: string[];
+}

@@ -12,7 +12,7 @@ const variantClasses: Record<VariantType, string> = {
 };
 
 const colorClasses: Record<ColorType, string> = {
-  white: "text-white",
+  white: "text-white-50",
   black: "text-black",
   gradient: "text-gradient",
 };

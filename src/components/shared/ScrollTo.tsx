@@ -5,16 +5,23 @@ interface ScrollToProps {
   id: string;
   className?: string;
   size?: string;
-  isChakraButton?: boolean
+  isChakraButton?: boolean;
   children: React.ReactNode;
-  onClick?: () => void
+  onClick?: () => void;
 }
 
-const ScrollTo: React.FC<ScrollToProps> = ({ id, className, size, onClick, isChakraButton = false, children }) => {
+const ScrollTo: React.FC<ScrollToProps> = ({
+  id,
+  className,
+  size,
+  onClick,
+  isChakraButton = false,
+  children,
+}) => {
   const scrollToSection = () => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
 
     if (onClick) {
@@ -24,30 +31,26 @@ const ScrollTo: React.FC<ScrollToProps> = ({ id, className, size, onClick, isCha
 
   return (
     <>
-      {
-        isChakraButton ? (
-
-          <Button 
-            onClick={scrollToSection} 
-            className={`cursor-pointer w-full h-full ${className}`} 
-            size={size ? size : "lg"}
-            bg="#F8F603"
-            _hover={{ bg: "#cebc00" }}
-          >
-            {children}
-          </Button>
-        ) : (
-          <div 
-          onClick={scrollToSection} 
-          className={`cursor-pointer w-full h-full ${className}`}
-          >
-            {children}
-          </div>
-          
-        )
-      }
+      {isChakraButton ? (
+        <Button
+          onClick={scrollToSection}
+          className={`cursor-pointer w-max h-max${className ? className : ""}`}
+          size={size ? size : "lg"}
+          bg="#F8F603"
+          _hover={{ bg: "#cebc00" }}
+        >
+          {children}
+        </Button>
+      ) : (
+        <div
+          onClick={scrollToSection}
+          className={`cursor-pointer w-max h-max${className ? className : ""}`}
+        >
+          {children}
+        </div>
+      )}
     </>
   );
-}; 
+};
 
 export default ScrollTo;

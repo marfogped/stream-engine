@@ -9,7 +9,8 @@ import RootLayout from "./layouts/root-layout";
 import PrivacyPolicy from "./routes/privacy-policy/PrivacyPolicy";
 import { NotFound, Loader } from "./components/shared";
 
-const Homepage = lazy(() => import("./routes/homepage/Homepage"));
+import Homepage from "./routes/homepage/Homepage";
+const CareersPage = lazy(() => import("./routes/careers/CareersPage"));
 
 const router = createBrowserRouter([
   {
@@ -17,9 +18,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/careers",
         element: (
           <Suspense fallback={<Loader />}>
-            <Homepage />
+            <CareersPage />
           </Suspense>
         ),
       },

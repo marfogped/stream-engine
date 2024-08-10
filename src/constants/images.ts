@@ -24,6 +24,8 @@ import OpticGaming from "../assets/img/optic-gaming-logo.png";
 import PaneraBread from "../assets/img/panera-bread-logo.png";
 import Roccat from "../assets/img/roccat-logo.png";
 
+import CareersBackground from "../assets/img/careers-background.webp";
+
 export default {
   StreamEngineLogo,
   DefenseBackground,
@@ -49,4 +51,5 @@ export default {
   OpticGaming,
   PaneraBread,
   Roccat,
+  CareersBackground,
 };
