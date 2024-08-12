@@ -150,7 +150,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="h2"
               variant="lg"
-              className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white"
+              className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white-50"
             >
               Defense Sector <ArrowDownIcon className="h-6 w-6" />
             </Typography>
@@ -159,7 +159,11 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
               variant="sm"
               className="text-gray-300 xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
             >
-              We assist the defense and cyber security community to detect potential threats by ingesting large datasets, utilizing trained models to recognize patterns across video, audio, text and still images. We equip our warfighters with modern tools to win the information war and keep us protected from threats.
+              We assist the defense and cyber security community to detect
+              potential threats by ingesting large datasets, utilizing trained
+              models to recognize patterns across video, audio, text and still
+              images. We equip our warfighters with modern tools to win the
+              information war and keep us protected from threats.
             </Typography>
           </ContainerAnimation>
         </div>
@@ -192,7 +196,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:pl-[100px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white transition-all"
+              className="text-center xl:pl-[100px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white-50 transition-all"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>
@@ -201,7 +205,10 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
               variant="sm"
               className="text-gray-300 xl:pl-[0px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
             >
-              We help global advertisers uncover competitive insights by leveraging machine learning and AI to analyze and categorize media at scale across OTT, social, and digital media. We provide advertisers with accurate media intelligence in real-time. 
+              We help global advertisers uncover competitive insights by
+              leveraging machine learning and AI to analyze and categorize media
+              at scale across OTT, social, and digital media. We provide
+              advertisers with accurate media intelligence in real-time.
             </Typography>
           </ContainerAnimation>
         </div>

@@ -87,7 +87,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
         <source src={technology.video} type="video/mp4" />
       </video>
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-[1] pointer-events-none" />
-      <div className="z-[2] flex flex-col gap-2 pointer-events-none">
+      <div className="z-[2] flex flex-col gap-2 pointer-events-none text-white-50">
         {technology.icon}
         <Typography variant="lg" color="white" className="leading-none">
           {technology.title}

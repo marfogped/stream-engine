@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           </ul>
         </ContainerAnimation>
       </div>
-      <div className="mt-[40px] bg-primary page-width py-2 flex justify-center">
+      <div className="mt-[40px] bg-primary-500 page-width py-2 flex justify-center">
         <Typography as="span" variant="sm" className="font-medium">
           2024 © Stream Engine. All rights reserved.
         </Typography>
