@@ -15,7 +15,7 @@ import { images } from "../../../constants";
 
 const index = () => {
   return (
-    <section className="min-h-[80dvh] w-full page-width mt-20">
+    <section id="jobs" className="min-h-[80dvh] w-full page-width mt-20">
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-5">
         <div className="relative col-span-full lg:col-span-4">
           <div className="flex flex-col gap-5 leading-none lg:sticky lg:top-5 z-10">
@@ -33,13 +33,22 @@ const index = () => {
           {constants.careers.map((career, careerIdx) => (
             <article
               key={`career-${careerIdx}`}
-              className="w-full flex items-center justify-between bg-white-100 h-28 lg:h-44 px-10 rounded-3xl"
+              className="w-full flex items-center justify-between xs:flex-col xs:px-0 xs:py-4 bg-white-100 xs:h-max xs:gap-5 sm:h-28 lg:h-44 px-10 rounded-3xl"
             >
               <div>
-                <Typography as="h3" variant="lg" color="black">
+                <Typography
+                  as="h3"
+                  variant="lg"
+                  color="black"
+                  className="xs:text-center"
+                >
                   {career.jobDescription}
                 </Typography>
-                <Typography as="p" variant="md" className="text-gray-700">
+                <Typography
+                  as="p"
+                  variant="md"
+                  className="text-gray-700 xs:text-center"
+                >
                   Miami, Florida, United States.
                 </Typography>
               </div>
