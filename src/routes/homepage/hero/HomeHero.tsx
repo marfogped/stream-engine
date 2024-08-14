@@ -150,7 +150,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="h2"
               variant="lg"
-              className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white-50"
+              className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white-50 xl:text-gray-400 xl:group-hover:text-white-50"
             >
               Defense Sector <ArrowDownIcon className="h-6 w-6" />
             </Typography>
@@ -196,7 +196,7 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
             <Typography
               as="h2"
               variant="lg"
-              className="text-center xl:pl-[100px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white xl:text-gray-400 xl:group-hover:text-white-50 transition-all"
+              className="text-center xl:pl-[100px] xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] pointer-events-none xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white-50 xl:text-gray-400 xl:group-hover:text-white-50 transition-all"
             >
               Advertising Industry <ArrowDownIcon className="h-6 w-6" />
             </Typography>

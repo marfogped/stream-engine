@@ -12,8 +12,22 @@ import {
   DrawerTrigger,
 } from "../../../components/ui/drawer";
 import { images } from "../../../constants";
+import { Career } from "../../../lib/types";
 
-const index = () => {
+interface JobsProps {
+  setSelectedJob: (values: Career | null) => void;
+}
+
+const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
+  const handleDrawer = (career: Career) => {
+    setSelectedJob(career);
+    const contactForm = document.getElementById("apply-form");
+
+    setTimeout(() => {
+      contactForm?.scrollIntoView({ behavior: "smooth" });
+    }, 400);
+  };
+
   return (
     <section id="jobs" className="min-h-[80dvh] w-full page-width mt-20">
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-5">
@@ -140,10 +154,6 @@ const index = () => {
                           )}
                         </ul>
                       </div>
-
-                      <DrawerFooter>
-                        <DrawerClose asChild></DrawerClose>
-                      </DrawerFooter>
                     </div>
 
                     <aside className="relative lg:sticky lg:top-5 col-span-full lg:col-span-3 flex flex-col gap-5 w-full h-max bg-white-100 p-5 rounded-3xl">
@@ -186,22 +196,25 @@ const index = () => {
                         </Typography>
                       </div>
 
-                      <div>
-                        <Button
-                          size={"md"}
-                          className="flex items-center gap-2 w-full"
-                          bg="#F8F603"
-                          _hover={{ bg: "#cebc00" }}
-                        >
-                          <Typography
-                            color="black"
-                            variant="md"
-                            className="font-medium"
+                      <DrawerFooter>
+                        <DrawerClose asChild>
+                          <Button
+                            size={"md"}
+                            className="flex items-center gap-2 w-full"
+                            bg="#F8F603"
+                            _hover={{ bg: "#cebc00" }}
+                            onClick={() => handleDrawer(career)}
                           >
-                            Apply Now
-                          </Typography>
-                        </Button>
-                      </div>
+                            <Typography
+                              color="black"
+                              variant="md"
+                              className="font-medium"
+                            >
+                              Apply Now
+                            </Typography>
+                          </Button>
+                        </DrawerClose>
+                      </DrawerFooter>
                     </aside>
                   </div>
                 </DrawerContent>

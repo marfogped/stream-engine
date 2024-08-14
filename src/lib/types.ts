@@ -34,3 +34,12 @@ export interface Career {
   responsibilities: string[];
   skillsAndExperience: string[];
 }
+
+export interface ApplyFormValues {
+  fullName: string;
+  email: string;
+  phone: string;
+  message: string;
+  position: string;
+  cv?: File | string;
+}
