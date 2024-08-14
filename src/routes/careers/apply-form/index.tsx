@@ -123,7 +123,11 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ selectedJob }) => {
           >
             Contact Us
           </Typography>
-          <Typography as="p" variant="md" className="text-gray-700">
+          <Typography
+            as="p"
+            variant="md"
+            className="leading-tight lg:leading-none text-gray-700"
+          >
             Contact us to explore job opportunities, inquire about our services,
             or receive assistance with your job search. We're here to help you
             take the next step in your career.

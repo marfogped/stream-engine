@@ -63,7 +63,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
                   variant="md"
                   className="text-gray-700 xs:text-center"
                 >
-                  Miami, Florida, United States.
+                  California, FL, United States.
                 </Typography>
               </div>
 
@@ -99,7 +99,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
                             variant="md"
                             className="text-gray-700"
                           >
-                            Miami, Florida, United States.
+                            California, FL, United States.
                           </Typography>
                         </DrawerDescription>
                       </DrawerHeader>
@@ -172,7 +172,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
                           variant="sm"
                           className="text-gray-700"
                         >
-                          Miami, Florida, United States.
+                          California, FL, United States.
                         </Typography>
                       </div>
 

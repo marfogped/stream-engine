@@ -77,6 +77,7 @@ const HomeContact: React.FC = () => {
           isClosable: true,
         });
     } catch (error) {
+      console.log(error);
       toast({
         title: "Failed to send message.",
         description: "Please try again later.",
