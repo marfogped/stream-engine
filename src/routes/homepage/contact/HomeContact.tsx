@@ -71,7 +71,7 @@ const HomeContact: React.FC = () => {
       if (response)
         toast({
           title: "Message sent successfully!.",
-          description: "We'll responde promptly.",
+          description: "We'll respond shortly.",
           status: "success",
           duration: 9000,
           isClosable: true,
