@@ -24,7 +24,7 @@ const index = () => {
             </Typography>
           </Typography>
 
-          <div className="mt-5 flex flex-col gap-2">
+          <div className="lg:mt-5 flex flex-col gap-2">
             <Typography
               as="p"
               variant="md"

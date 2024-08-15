@@ -88,7 +88,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
                   </Button>
                 </DrawerTrigger>
                 <DrawerContent>
-                  <div className="w-full relative px-5 lg:px-[100px] h-[70dvh] overflow-y-scroll grid grid-cols-4 lg:grid-cols-12 gap-5">
+                  <div className="w-full relative px-5 lg:px-[100px] h-[80dvh] lg:h-[70dvh] overflow-y-scroll grid grid-cols-4 lg:grid-cols-12 gap-5">
                     <div className="col-span-full lg:col-span-9 flex flex-col gap-10 lg:gap-20">
                       <DrawerHeader>
                         <DrawerTitle>
