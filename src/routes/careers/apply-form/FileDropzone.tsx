@@ -1,5 +1,5 @@
 import { CloudArrowUpIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { ChangeEvent, DragEvent, useState } from "react";
+import { ChangeEvent, DragEvent, useRef, useState } from "react";
 import { Typography } from "../../../components/ui";
 import { ApplyFormValues } from "../../../lib/types";
 import { Button } from "@chakra-ui/react";
@@ -15,6 +15,7 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
   formValues,
 }) => {
   const [showError, setShowError] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDragOver = (event: DragEvent<HTMLLabelElement>) => {
     event.preventDefault();
@@ -46,6 +47,9 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
 
   const handleClear = () => {
     setFormValues({ ...formValues, cv: "" });
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
@@ -94,6 +98,7 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
         onChange={handleChange}
         aria-label="Upload your resume"
         id="cv"
+        ref={fileInputRef}
         required
       />
       {showError && (
