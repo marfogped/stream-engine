@@ -5,7 +5,7 @@ import { ScrollTo } from "../../../components/shared";
 const index = () => {
   return (
     <section
-      className="min-h-[65dvh] lg:min-h-[90dvh] relative bg-cover bg-center bg-no-repeat flex video-overlay"
+      className="min-h-[65vh] lg:min-h-[90vh] relative bg-cover bg-center bg-no-repeat flex video-overlay"
       style={{
         backgroundImage: `url(${images.CareersBackground})`,
       }}
