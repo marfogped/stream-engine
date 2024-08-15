@@ -30,7 +30,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
   };
 
   return (
-    <section id="jobs" className="min-h-[80dvh] w-full page-width mt-20">
+    <section id="jobs" className="min-h-[30dvh] w-full page-width mt-20">
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-5">
         <div className="relative col-span-full lg:col-span-4">
           <div className="flex flex-col gap-5 leading-none lg:sticky lg:top-5 z-10">
