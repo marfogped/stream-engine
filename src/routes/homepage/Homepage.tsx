@@ -20,7 +20,7 @@ const Homepage: React.FC = () => {
       <Helmet>
         <meta
           name="description"
-          content="Stream Engine provides advanced AI-powered advertising and defense services. We use cutting-edge technology to optimize advertising campaigns and enhance defense operations with real-time analysis."
+          content="Stream Engine offers AI-powered advertising and defense services, leveraging advanced technology for optimal results. We enhance advertising campaigns and defense operations with real-time analysis and cutting-edge solutions."
         />
         <meta
           name="keywords"
@@ -32,7 +32,7 @@ const Homepage: React.FC = () => {
         />
         <meta
           property="og:description"
-          content="Stream Engine offers advanced advertising and defense solutions using artificial intelligence. Our innovative technology enables real-time data analysis to maximize the effectiveness and security of our operations."
+          content="Stream Engine offers AI-powered advertising and defense services, leveraging advanced technology for optimal results. We enhance advertising campaigns and defense operations with real-time analysis and cutting-edge solutions."
         />
         <meta property="og:url" content="https://stream-engine.io" />
         <meta property="og:image" content="/stream-engine-logo.png" />
