@@ -5,12 +5,14 @@ import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Typography } from "../ui";
 import { constants } from "../../constants";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import gsap from "gsap";
 import { Button } from "@chakra-ui/react";
+import { useWindowDimensions } from "../../hooks";
+import gsap from "gsap";
 
 const TopBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { windowWidth } = useWindowDimensions();
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
   const location = useLocation();
@@ -45,12 +47,19 @@ const TopBar: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleJoinUs = () => {
+    if (location.pathname === "/careers") {
+      const section = document.getElementById("jobs");
+      section?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/careers");
+    }
+  };
 
   return (
     <header
@@ -85,7 +94,7 @@ const TopBar: React.FC = () => {
           </ScrollTo>
         ))}
         <Button
-          onClick={() => navigate("/careers")}
+          onClick={handleJoinUs}
           size={"sm"}
           className="flex items-center gap-2"
           bg="#F8F603"
@@ -96,19 +105,24 @@ const TopBar: React.FC = () => {
           </Typography>
         </Button>
       </nav>
-      <div className="xs:flex sm:flex md:hidden">
-        {isMenuOpen ? (
-          <XMarkIcon
-            className="h-12 w-12 text-white-50 mix-blend-difference hover:scale-75 transition-all"
-            onClick={toggleMenu}
-          />
-        ) : (
-          <Bars2Icon
-            className="h-12 w-12 text-white-50 mix-blend-difference hover:scale-75 transition-all"
-            onClick={toggleMenu}
-          />
-        )}
-      </div>
+
+      {windowWidth < 768 ? (
+        <div className="flex">
+          {isMenuOpen ? (
+            <XMarkIcon
+              className="h-12 w-12 text-white-50 mix-blend-difference hover:scale-75 transition-all"
+              onClick={toggleMenu}
+            />
+          ) : (
+            <Bars2Icon
+              className="h-12 w-12 text-white-50 mix-blend-difference hover:scale-75 transition-all"
+              onClick={toggleMenu}
+            />
+          )}
+        </div>
+      ) : (
+        ""
+      )}
 
       {isMenuOpen ? (
         <nav className="absolute gap-2 origin-top top-20 left-0 w-full bg-white-50/80 p-5 flex flex-col items-start md:hidden">
@@ -125,7 +139,10 @@ const TopBar: React.FC = () => {
             </ScrollTo>
           ))}
           <Button
-            onClick={() => navigate("/careers")}
+            onClick={() => {
+              handleJoinUs();
+              toggleMenu();
+            }}
             size={"sm"}
             className="flex items-center gap-2"
             bg="#F8F603"
