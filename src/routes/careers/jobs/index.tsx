@@ -11,6 +11,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "../../../components/ui/drawer";
+import { AnimatedCard } from "../../../components/ui";
 import { images } from "../../../constants";
 import { Career } from "../../../lib/types";
 
@@ -45,8 +46,10 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
 
         <div className="flex flex-col gap-5 col-span-full lg:col-span-8 mt-10 lg:mt-0">
           {constants.careers.map((career, careerIdx) => (
-            <article
+            <AnimatedCard
+              as="article"
               key={`career-${careerIdx}`}
+              index={careerIdx}
               className="w-full flex items-center justify-between xs:flex-col xs:px-0 xs:py-4 bg-white-100 xs:h-max xs:gap-5 sm:h-28 lg:h-44 px-10 rounded-3xl"
             >
               <div>
@@ -219,7 +222,7 @@ const index: React.FC<JobsProps> = ({ setSelectedJob }) => {
                   </div>
                 </DrawerContent>
               </Drawer>
-            </article>
+            </AnimatedCard>
           ))}
 
           <footer className="border-t border-gray-700 w-full mt-20 py-2">

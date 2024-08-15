@@ -1,11 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Typography } from "../ui";
+import React, { useRef, useState } from "react";
+import { Typography, AnimatedCard } from "../ui";
 import { TechnologyProps } from "../../lib/types";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useWindowDimensions } from "../../hooks";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface CardProps {
   technology: TechnologyProps;
@@ -19,32 +15,8 @@ const TechnologiesCards: React.FC<CardProps> = ({
   index,
 }) => {
   const { windowWidth } = useWindowDimensions();
-  const cardRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    if (cardRef.current) {
-      gsap.fromTo(
-        cardRef.current,
-        { opacity: 0, y: -40, filter: "blur(10px)" },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 1,
-          ease: "power4.out",
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: cardRef.current,
-            start: "top 90%",
-            end: "bottom 50%",
-            once: true,
-          },
-        }
-      );
-    }
-  }, [index]);
 
   const handleMouseEnter = () => {
     if (windowWidth > 1200 && isVideoLoaded) {
@@ -65,12 +37,13 @@ const TechnologiesCards: React.FC<CardProps> = ({
   const isMobileResolution = windowWidth < 992;
 
   return (
-    <article
-      ref={cardRef}
+    <AnimatedCard
+      as={"article"}
       style={{
         gridColumn: `span ${technology.cols}`,
         gridRow: `span ${technology.rows}`,
       }}
+      index={index}
       className={`${className} xl:cursor-none flex flex-col justify-end items-start xs:h-[284px] sm:h-[284px] lg:h-full rounded-[10px] p-5 relative overflow-hidden group`}
     >
       <video
@@ -99,7 +72,7 @@ const TechnologiesCards: React.FC<CardProps> = ({
           {technology.description}
         </Typography>
       </div>
-    </article>
+    </AnimatedCard>
   );
 };
 
