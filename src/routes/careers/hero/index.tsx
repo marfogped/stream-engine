@@ -47,7 +47,7 @@ const index = () => {
         </div>
 
         <ScrollTo id="jobs" isChakraButton={true} className="w-full xl:w-max">
-          Find my Next Job
+          View Open Positions
         </ScrollTo>
       </div>
     </section>

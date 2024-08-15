@@ -273,7 +273,7 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ selectedJob }) => {
               type="submit"
               isLoading={isSubmitting}
             >
-              Send Apply <PaperAirplaneIcon className="h-7 w-7" />
+              Submit Application <PaperAirplaneIcon className="h-7 w-7" />
             </Button>
           </div>
         </form>

@@ -146,18 +146,18 @@ const HomeHero: React.FC<HomeHeroProps> = ({ setSelectedService }) => {
           >
             <source src={videos.DefenseVideo} type="video/mp4" />
           </video>
-          <ContainerAnimation className="px-[20px] xl:px-[0px] z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 origin-top pointer-events-none relative w-11/12 mx-auto xxl:w-3/4 h-1/3">
+          <ContainerAnimation className="px-[20px] xl:px-0 z-10 pb-16 transition-all flex flex-col items-center xl:items-start gap-2 pointer-events-none relative w-11/12 mx-auto xxl:w-3/4 h-1/3">
             <Typography
               as="h2"
               variant="lg"
-              className="text-center pointer-events-none xl:pl-[100px] xxl:pl-[200px] xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white-50 xl:text-gray-400 xl:group-hover:text-white-50"
+              className="text-center pointer-events-none xl:pl-[100px]  xl:text-start font-medium flex items-center justify-center gap-1 leading-none text-white-50 xl:text-gray-400 xl:group-hover:text-white-50"
             >
               Defense Sector <ArrowDownIcon className="h-6 w-6" />
             </Typography>
             <Typography
               as="p"
               variant="sm"
-              className="text-gray-300 xl:group-hover:pl-[100px] xxl:group-hover:pl-[200px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
+              className="text-gray-300 xl:group-hover:pl-[100px] text-center pointer-events-none xl:text-start xl:group-hover:opacity-100 xl:opacity-0 transition-all absolute top-8 md:top-10 left-0 w-full"
             >
               We assist the defense and cyber security community to detect
               potential threats by ingesting large datasets, utilizing trained

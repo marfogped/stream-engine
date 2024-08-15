@@ -38,7 +38,7 @@ const HomeServices: React.FC<HomeServicesProps> = ({ selectedService }) => {
         index={tabIndex}
         onChange={(index) => setTabIndex(index)}
       >
-        <TabList className="w-max xl:pl-[100px] xxl:pl-[200px]">
+        <TabList className="w-max xl:pl-[100px]">
           <Tab>
             <Typography as="h2" variant="md" color="white">
               DEFENSE
