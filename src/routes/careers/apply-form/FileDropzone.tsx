@@ -1,8 +1,9 @@
 import { CloudArrowUpIcon, TrashIcon } from "@heroicons/react/24/outline";
-import { ChangeEvent, DragEvent } from "react";
+import { ChangeEvent, DragEvent, useState } from "react";
 import { Typography } from "../../../components/ui";
 import { ApplyFormValues } from "../../../lib/types";
 import { Button } from "@chakra-ui/react";
+import { isFileTypeValid } from "../../../lib/utils";
 
 interface FileDropzoneProps {
   setFormValues: (values: ApplyFormValues) => void;
@@ -13,6 +14,8 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
   setFormValues,
   formValues,
 }) => {
+  const [showError, setShowError] = useState(false);
+
   const handleDragOver = (event: DragEvent<HTMLLabelElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -23,15 +26,21 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
     event.stopPropagation();
 
     const file = event.dataTransfer.files[0];
-    if (file && file.type === "application/pdf") {
+    if (file && isFileTypeValid(file)) {
+      setShowError(false);
       setFormValues({ ...formValues, cv: file });
+    } else {
+      setShowError(true);
     }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && file.type === "application/pdf") {
+    if (file && isFileTypeValid(file)) {
+      setShowError(false);
       setFormValues({ ...formValues, cv: file });
+    } else {
+      setShowError(true);
     }
   };
 
@@ -72,7 +81,7 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
               variant="md"
               className="text-gray-600 tracking-wide"
             >
-              Upload or drag & drop your .pdf file.
+              Upload or drag & drop your .pdf, .doc, and .docx file.
             </Typography>
           </>
         )}
@@ -81,12 +90,17 @@ export const FileDropzone: React.FC<FileDropzoneProps> = ({
         type="file"
         className="opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer"
         name="cv"
-        accept=".pdf"
+        accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         onChange={handleChange}
         aria-label="Upload your resume"
         id="cv"
         required
       />
+      {showError && (
+        <span className="text-red-600 mt-2">
+          Please upload a valid file format (.pdf, .doc, .docx).
+        </span>
+      )}
     </div>
   );
 };
