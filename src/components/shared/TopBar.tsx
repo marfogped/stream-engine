@@ -83,7 +83,7 @@ const TopBar: React.FC = () => {
       </Link>
       <nav className="xs:hidden sm:hidden md:flex items-center gap-5">
         {constants.navItems.map((item) => (
-          <ScrollTo id={item.path} key={item.key}>
+          <ScrollTo isNavbarOpt={true} id={item.path} key={item.key}>
             <Typography
               color="white"
               variant="sm"
@@ -130,6 +130,7 @@ const TopBar: React.FC = () => {
             <ScrollTo
               id={item.path}
               key={item.key}
+              isNavbarOpt={true}
               onClick={toggleMenu}
               className="link-underline w-max"
             >
