@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     <footer className="mt-20">
       <div className="page-width flex xs:flex-col sm:flex-col md:flex-row items-start lg:items-center justify-between">
         <div className="flex flex-col gap-[20px] items-start">
-          <Link to={"/"}>
+          <a href={"mailto:info@stream-engine.io"}>
             <picture>
               <img
                 src={images.StreamEngineLogo}
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                 className="w-32 mix-blend-difference"
               />
             </picture>
-          </Link>
+          </a>
 
           <div className="flex items-center gap-[5px]">
             {constants.socials.map((social) => (
