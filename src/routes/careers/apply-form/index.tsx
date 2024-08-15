@@ -87,7 +87,7 @@ const ApplyForm: React.FC<ApplyFormProps> = ({ selectedJob }) => {
         if (result) {
           toast({
             title: "Application sent successfully!.",
-            description: "We'll responde promptly.",
+            description: "We'll respond shortly.",
             status: "success",
             duration: 9000,
             isClosable: true,
