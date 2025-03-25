@@ -25,6 +25,7 @@ import PaneraBread from "../assets/img/panera-bread-logo.png";
 import Roccat from "../assets/img/roccat-logo.png";
 
 import CareersBackground from "../assets/img/careers-background.webp";
+import ViolaCreativeLogo from "../assets/img/viola-creative-black.webp";
 
 export default {
   StreamEngineLogo,
@@ -52,4 +53,5 @@ export default {
   PaneraBread,
   Roccat,
   CareersBackground,
+  ViolaCreativeLogo,
 };

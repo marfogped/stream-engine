@@ -63,10 +63,24 @@ const Footer: React.FC = () => {
           </ul>
         </ContainerAnimation>
       </div>
-      <div className="mt-[40px] bg-primary-500 page-width py-2 flex justify-center">
+      <div className="mt-[40px] bg-primary-500 page-width py-2 flex justify-between">
         <Typography as="span" variant="sm" className="font-medium">
-          2024 © Stream Engine. All rights reserved.
+          {new Date().getFullYear()} © Stream Engine. All rights reserved.
         </Typography>
+
+        <a
+          href="https://www.violacreative.com/"
+          className="flex flex-col lg:flex-row lg:items-center gap-1"
+        >
+          <span className="text-[12px] text-gray-600">Developed by</span>
+          <img
+            src={images.ViolaCreativeLogo}
+            alt="Viola Creative Logo"
+            height={15}
+            width={100}
+            loading="lazy"
+          />
+        </a>
       </div>
     </footer>
   );
